@@ -2,7 +2,6 @@ import {
   Building2,
   BriefcaseBusiness,
   FlaskConical,
-  Medal,
   ShieldCheck,
 } from "lucide-react";
 

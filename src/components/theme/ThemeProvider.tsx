@@ -7,16 +7,14 @@ import {
   useState,
 } from "react";
 
-type Theme =
-  | "founder-noir"
-  | "executive-light"
-  | "ai-ember"
-  | "research-blue"
-  | "emerald";
+import {
+  THEMES,
+  type ThemeId,
+} from "@/content/themes";
 
 type ThemeContextValue = {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
+  theme: ThemeId;
+  setTheme: (theme: ThemeId) => void;
 };
 
 const ThemeContext =
@@ -24,20 +22,19 @@ const ThemeContext =
     null,
   );
 
-const DEFAULT_THEME: Theme =
+const DEFAULT_THEME: ThemeId =
   "founder-noir";
 
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") {
-    return DEFAULT_THEME;
+function isValidTheme(
+  value: string | null,
+): value is ThemeId {
+  if (!value) {
+    return false;
   }
 
-  const stored =
-    window.localStorage.getItem(
-      "saurabh-theme",
-    ) as Theme | null;
-
-  return stored ?? DEFAULT_THEME;
+  return THEMES.some(
+    (theme) => theme.id === value,
+  );
 }
 
 export function ThemeProvider({
@@ -45,10 +42,45 @@ export function ThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
+  /*
+   * IMPORTANT:
+   *
+   * Server and first client render MUST
+   * start with the same theme.
+   *
+   * We read localStorage only AFTER
+   * hydration inside useEffect.
+   */
   const [theme, setThemeState] =
-    useState<Theme>(getInitialTheme);
+    useState<ThemeId>(DEFAULT_THEME);
+
+  const [hydrated, setHydrated] =
+    useState(false);
 
   useEffect(() => {
+    const stored =
+      window.localStorage.getItem(
+        "saurabh-theme",
+      );
+
+    const initialTheme =
+      isValidTheme(stored)
+        ? stored
+        : DEFAULT_THEME;
+
+    setThemeState(initialTheme);
+
+    document.documentElement.dataset.theme =
+      initialTheme;
+
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) {
+      return;
+    }
+
     document.documentElement.dataset.theme =
       theme;
 
@@ -56,10 +88,10 @@ export function ThemeProvider({
       "saurabh-theme",
       theme,
     );
-  }, [theme]);
+  }, [theme, hydrated]);
 
   function setTheme(
-    nextTheme: Theme,
+    nextTheme: ThemeId,
   ) {
     setThemeState(nextTheme);
   }

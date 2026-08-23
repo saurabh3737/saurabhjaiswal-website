@@ -206,28 +206,18 @@
 .hero-composition {
   position: absolute;
 
-  top: 70px;
-  right: 0;
-  bottom: 8px;
-  left: -24px;
+  top: 6px;
+  right: -110px;
+  bottom: 0;
+  left: -85px;
 
   overflow: hidden;
 }
 
-/*
- * IMPORTANT:
- * contain keeps the full composed image visible:
- *
- * face + book + lamp + plant + mug
- *
- * so nothing gets cropped at 100% zoom.
- */
 .hero-composition-image {
   object-fit: contain;
-
-  object-position: 97% top;
+  object-position: right top;
 }
-
 /*
  * Fade only enough of the left side
  * to merge the photograph into the page.
@@ -237,7 +227,6 @@
  */
 .hero-composition-left-fade {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -248,11 +237,12 @@
     linear-gradient(
       90deg,
       var(--background) 0%,
-      rgba(5, 11, 19, 0.84) 6%,
-      rgba(5, 11, 19, 0.48) 14%,
-      rgba(5, 11, 19, 0.16) 23%,
-      rgba(5, 11, 19, 0.03) 31%,
-      transparent 39%
+      rgba(5, 11, 19, 0.96) 5%,
+      rgba(5, 11, 19, 0.78) 13%,
+      rgba(5, 11, 19, 0.42) 23%,
+      rgba(5, 11, 19, 0.14) 33%,
+      rgba(5, 11, 19, 0.02) 42%,
+      transparent 50%
     );
 }
 
@@ -265,15 +255,16 @@
 
   z-index: 2;
 
-  height: 55px;
+  height: 110px;
 
   pointer-events: none;
 
   background:
     linear-gradient(
       to bottom,
-      transparent,
-      var(--background)
+      transparent 0%,
+      rgba(5, 11, 19, 0.18) 35%,
+      var(--background) 100%
     );
 }
 
@@ -300,35 +291,36 @@ html[data-theme="executive-light"]
    ========================================= */
 
 .proof-strip {
-   position: relative;
+  position: relative;
 
-   z-index: 20;
+  z-index: 20;
 
-   width: min(
-     900px,
-     calc(100% + 220px)
-   );
+  width: min(
+    980px,
+    calc(100% + 300px)
+  );
 
-   margin-top: 8px;
-   margin-right: -220px;
+  margin-top: 8px;
+  margin-right: -300px;
 
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
-   border: 1px solid var(--border);
-   border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
 
-   background:
-     linear-gradient(
-       180deg,
-       rgba(var(--accent-rgb), 0.04),
-       transparent
-     ),
-     var(--surface);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.04),
+      transparent
+    ),
+    var(--surface);
 
-   box-shadow: var(--shadow);
-   backdrop-filter: blur(15px);
- }
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(15px);
+}
 
 .proof-item {
   min-height: 88px;

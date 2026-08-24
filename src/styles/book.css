@@ -1,0 +1,872 @@
+/* =========================================
+   BOOK HERO
+   ========================================= */
+
+.book-hero {
+  position: relative;
+
+  min-height: 690px;
+
+  padding: 70px 0 90px;
+
+  overflow: hidden;
+
+  background: var(--background);
+}
+
+.book-hero-glow {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 75% 38%,
+      rgba(var(--accent-rgb), 0.11),
+      transparent 31%
+    );
+}
+
+.book-hero-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(360px, 0.72fr);
+
+  gap: 88px;
+
+  align-items: center;
+}
+
+.book-hero-copy {
+  max-width: 760px;
+}
+
+.book-hero-title {
+  margin: 18px 0 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      58px,
+      5.5vw,
+      82px
+    );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 820;
+}
+
+.book-hero-title span {
+  color: var(--accent);
+}
+
+.book-hero-line {
+  width: 70px;
+  height: 4px;
+
+  margin-top: 28px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+}
+
+.book-hero-lead {
+  max-width: 620px;
+
+  margin: 28px 0 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+  line-height: 1.5;
+
+  font-weight: 650;
+}
+
+.book-hero-description {
+  max-width: 650px;
+
+  margin: 16px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.book-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+/* =========================================
+   BOOK HERO PANEL
+   ========================================= */
+
+.book-hero-panel {
+  padding: 38px 34px;
+}
+
+.book-panel-label {
+  color: var(--text-muted);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.11em;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.book-hero-panel blockquote {
+  margin: 24px 0 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      26px,
+      2.4vw,
+      36px
+    );
+
+  line-height: 1.28;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 720;
+}
+
+.book-hero-panel blockquote span {
+  color: var(--accent);
+}
+
+.book-panel-line {
+  width: 48px;
+  height: 2px;
+
+  margin: 28px 0 22px;
+
+  background: var(--accent);
+}
+
+.book-hero-panel p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.book-panel-author {
+  margin-top: 22px;
+
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .book-hero {
+    min-height: auto;
+
+    padding: 72px 0 82px;
+  }
+
+  .book-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 46px;
+  }
+
+  .book-hero-panel {
+    max-width: 680px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 620px) {
+  .book-hero {
+    padding: 54px 0 64px;
+  }
+
+  .book-hero-title {
+    font-size:
+      clamp(
+        48px,
+        14vw,
+        64px
+      );
+  }
+
+  .book-hero-lead {
+    font-size: 18px;
+  }
+
+  .book-hero-description {
+    font-size: 15px;
+  }
+
+  .book-hero-actions {
+    flex-direction: column;
+  }
+
+  .book-hero-actions .action-primary,
+  .book-hero-actions .action-secondary {
+    width: 100%;
+  }
+
+  .book-hero-panel {
+    padding: 28px 24px;
+  }
+}
+/* =========================================
+   WHY I WROTE THE BOOK
+   ========================================= */
+
+.book-why-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.book-why-heading {
+  max-width: 780px;
+
+  margin-bottom: 48px;
+}
+
+.book-why-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.book-why-card {
+  min-height: 280px;
+
+  padding: 28px;
+}
+
+.book-why-card-title {
+  margin-top: 22px;
+}
+
+/* =========================================
+   BOOK STATEMENT
+   ========================================= */
+
+.book-why-statement {
+  max-width: 1040px;
+
+  margin-top: 20px;
+
+  padding: 36px 40px;
+
+  border-left:
+    3px solid var(--accent);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--accent-rgb), 0.07),
+      transparent 72%
+    );
+}
+
+.book-why-statement-label {
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.11em;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.book-why-statement blockquote {
+  max-width: 900px;
+
+  margin: 18px 0 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      23px,
+      2.4vw,
+      32px
+    );
+
+  line-height: 1.4;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 680;
+}
+
+.book-why-statement blockquote span {
+  color: var(--accent);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .book-why-section {
+    padding: 72px 0 82px;
+  }
+
+  .book-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-why-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .book-why-section {
+    padding: 56px 0 64px;
+  }
+
+  .book-why-heading {
+    margin-bottom: 36px;
+  }
+
+  .book-why-card {
+    padding: 22px;
+  }
+
+  .book-why-statement {
+    margin-top: 18px;
+
+    padding: 28px 22px;
+  }
+}
+/* =========================================
+   WHAT YOU'LL LEARN
+   ========================================= */
+
+.book-learn-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.025),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+.book-learn-heading {
+  max-width: 780px;
+
+  margin-bottom: 48px;
+}
+
+.book-learn-list {
+  max-width: 1080px;
+
+  border-top: 1px solid var(--border);
+}
+
+.book-learn-item {
+  display: grid;
+
+  grid-template-columns:
+    54px
+    54px
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  align-items: start;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.book-learn-number {
+  padding-top: 16px;
+
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.book-learn-copy {
+  max-width: 760px;
+
+  padding-top: 8px;
+}
+
+.book-learn-copy h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      24px,
+      2.2vw,
+      32px
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 760;
+}
+
+.book-learn-copy p {
+  max-width: 720px;
+
+  margin: 10px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 820px) {
+  .book-learn-section {
+    padding: 72px 0 82px;
+  }
+}
+
+@media (max-width: 620px) {
+  .book-learn-section {
+    padding: 56px 0 64px;
+  }
+
+  .book-learn-heading {
+    margin-bottom: 36px;
+  }
+
+  .book-learn-item {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 24px 0;
+  }
+
+  .book-learn-number {
+    display: none;
+  }
+
+  .book-learn-copy {
+    padding-top: 5px;
+  }
+
+  .book-learn-copy p {
+    font-size: 14px;
+  }
+}
+/* =========================================
+   BOOK AUDIENCE
+   ========================================= */
+
+.book-audience-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.book-audience-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(420px, 1.1fr);
+
+  gap: 82px;
+
+  align-items: start;
+}
+
+.book-audience-heading {
+  max-width: 650px;
+}
+
+.book-audience-list {
+  border-top: 1px solid var(--border);
+}
+
+.book-audience-item {
+  display: grid;
+
+  grid-template-columns:
+    54px
+    minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 24px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.book-audience-copy {
+  padding-top: 4px;
+}
+
+.book-audience-copy h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 740;
+}
+
+.book-audience-copy p {
+  max-width: 600px;
+
+  margin: 8px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .book-audience-section {
+    padding: 72px 0 82px;
+  }
+
+  .book-audience-layout {
+    grid-template-columns: 1fr;
+
+    gap: 44px;
+  }
+}
+
+@media (max-width: 620px) {
+  .book-audience-section {
+    padding: 56px 0 64px;
+  }
+
+  .book-audience-layout {
+    gap: 36px;
+  }
+
+  .book-audience-item {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 21px 0;
+  }
+
+  .book-audience-copy h3 {
+    font-size: 19px;
+  }
+
+  .book-audience-copy p {
+    font-size: 14px;
+  }
+}
+/* =========================================
+   BOOK CTA
+   ========================================= */
+
+.book-cta-section {
+  padding: 88px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.book-cta-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.42fr);
+
+  gap: 60px;
+
+  align-items: center;
+
+  padding: 52px 56px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 82% 38%,
+      rgba(var(--accent-rgb), 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(var(--accent-rgb), 0.045),
+      transparent 42%
+    ),
+    var(--surface);
+
+  box-shadow: var(--shadow);
+}
+
+.book-cta-copy {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+}
+
+.book-cta-copy .section-intro {
+  max-width: 650px;
+}
+
+.book-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  align-items: stretch;
+
+  margin-top: 30px;
+}
+
+/* =========================================
+   AVAILABILITY
+   ========================================= */
+
+.book-availability {
+  min-height: 62px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 18px;
+
+  color: var(--accent);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background:
+    rgba(var(--accent-rgb), 0.04);
+}
+
+.book-availability div {
+  display: grid;
+
+  gap: 3px;
+}
+
+.book-availability strong {
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.book-availability span {
+  color: var(--text-muted);
+
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+/* =========================================
+   BOOK MARK
+   ========================================= */
+
+.book-cta-mark {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(var(--accent-rgb), 0.08),
+      transparent 50%
+    ),
+    rgba(var(--accent-rgb), 0.025);
+}
+
+.book-cta-book-title {
+  display: grid;
+
+  gap: 2px;
+}
+
+.book-cta-book-title span {
+  color: var(--accent);
+
+  font-size: 54px;
+  line-height: 0.9;
+
+  font-weight: 850;
+
+  letter-spacing: -0.06em;
+}
+
+.book-cta-book-title strong {
+  color: var(--text);
+
+  font-size: 19px;
+  line-height: 1;
+
+  font-weight: 820;
+
+  letter-spacing: -0.035em;
+}
+
+.book-cta-subtitle {
+  margin-top: 18px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.book-cta-author {
+  margin-top: 22px;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  font-size: 9px;
+  font-weight: 750;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .book-cta-section {
+    padding: 70px 0 80px;
+  }
+
+  .book-cta-card {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding: 42px;
+  }
+
+  .book-cta-mark {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 620px) {
+  .book-cta-section {
+    padding: 56px 0 64px;
+  }
+
+  .book-cta-card {
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+  .book-cta-actions {
+    flex-direction: column;
+  }
+
+  .book-availability,
+  .book-cta-actions .action-secondary {
+    width: 100%;
+  }
+
+  .book-cta-mark {
+    min-height: 180px;
+  }
+}

@@ -1,0 +1,144 @@
+/* =========================================
+   CONTACT
+   ========================================= */
+
+.contact-section {
+  position: relative;
+
+  min-height: calc(100vh - 80px);
+
+  padding: 82px 0 100px;
+
+  overflow: hidden;
+
+  background: var(--background);
+}
+
+.contact-glow {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 76% 28%,
+      rgba(var(--accent-rgb), 0.1),
+      transparent 30%
+    );
+}
+
+.contact-heading {
+  position: relative;
+  z-index: 2;
+
+  max-width: 820px;
+}
+
+.contact-title {
+  margin: 18px 0 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      52px,
+      5vw,
+      76px
+    );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+.contact-title span {
+  color: var(--accent);
+}
+
+.contact-lead {
+  max-width: 680px;
+
+  margin: 28px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.contact-email {
+  margin-top: 28px;
+}
+
+.contact-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 58px;
+}
+
+.contact-card {
+  min-height: 220px;
+
+  padding: 26px;
+}
+
+.contact-card-title {
+  margin-top: 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .contact-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-section {
+    padding: 56px 0 68px;
+  }
+
+  .contact-title {
+    font-size:
+      clamp(
+        42px,
+        12vw,
+        56px
+      );
+  }
+
+  .contact-lead {
+    font-size: 16px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 42px;
+  }
+
+  .contact-card {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .contact-email {
+    width: 100%;
+  }
+}

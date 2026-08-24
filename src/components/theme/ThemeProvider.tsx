@@ -4,7 +4,7 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
+  useSyncExternalStore,
 } from "react";
 
 import {
@@ -25,6 +25,12 @@ const ThemeContext =
 const DEFAULT_THEME: ThemeId =
   "founder-noir";
 
+const STORAGE_KEY =
+  "saurabh-theme";
+
+const THEME_EVENT =
+  "saurabh-theme-change";
+
 function isValidTheme(
   value: string | null,
 ): value is ThemeId {
@@ -37,14 +43,10 @@ function isValidTheme(
   );
 }
 
-function getInitialTheme(): ThemeId {
-  if (typeof window === "undefined") {
-    return DEFAULT_THEME;
-  }
-
+function getThemeSnapshot(): ThemeId {
   const stored =
     window.localStorage.getItem(
-      "saurabh-theme",
+      STORAGE_KEY,
     );
 
   return isValidTheme(stored)
@@ -52,28 +54,67 @@ function getInitialTheme(): ThemeId {
     : DEFAULT_THEME;
 }
 
+function getServerSnapshot(): ThemeId {
+  return DEFAULT_THEME;
+}
+
+function subscribe(
+  callback: () => void,
+) {
+  window.addEventListener(
+    "storage",
+    callback,
+  );
+
+  window.addEventListener(
+    THEME_EVENT,
+    callback,
+  );
+
+  return () => {
+    window.removeEventListener(
+      "storage",
+      callback,
+    );
+
+    window.removeEventListener(
+      THEME_EVENT,
+      callback,
+    );
+  };
+}
+
 export function ThemeProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setThemeState] =
-    useState<ThemeId>(getInitialTheme);
+  const theme =
+    useSyncExternalStore(
+      subscribe,
+      getThemeSnapshot,
+      getServerSnapshot,
+    );
 
   useEffect(() => {
     document.documentElement.dataset.theme =
       theme;
-
-    window.localStorage.setItem(
-      "saurabh-theme",
-      theme,
-    );
   }, [theme]);
 
   function setTheme(
     nextTheme: ThemeId,
   ) {
-    setThemeState(nextTheme);
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      nextTheme,
+    );
+
+    document.documentElement.dataset.theme =
+      nextTheme;
+
+    window.dispatchEvent(
+      new Event(THEME_EVENT),
+    );
   }
 
   return (

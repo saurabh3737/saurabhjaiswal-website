@@ -25,6 +25,10 @@ const navItems = [
     href: "/book",
   },
   {
+    label: "Ventures",
+    href: "/ventures",
+  },
+  {
     label: "AIMates",
     href: "/aimates",
   },

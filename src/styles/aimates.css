@@ -1,0 +1,964 @@
+/* =========================================
+   AIMATES HERO
+   ========================================= */
+
+.aimates-hero {
+  position: relative;
+  min-height: 690px;
+  padding: 70px 0 90px;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.aimates-hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 76% 38%,
+      rgba(var(--accent-rgb), 0.11),
+      transparent 31%
+    );
+}
+
+.aimates-hero-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(360px, 0.72fr);
+
+  gap: 88px;
+  align-items: center;
+}
+
+.aimates-hero-copy {
+  max-width: 780px;
+}
+
+.aimates-hero-title {
+  margin: 18px 0 0;
+
+  color: var(--text);
+
+  font-size: clamp(52px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+}
+
+.aimates-hero-title span {
+  color: var(--accent);
+}
+
+.aimates-hero-line {
+  width: 70px;
+  height: 4px;
+
+  margin-top: 28px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+}
+
+.aimates-hero-lead {
+  max-width: 690px;
+
+  margin: 28px 0 0;
+
+  color: var(--text);
+
+  font-size: 19px;
+  line-height: 1.65;
+  font-weight: 520;
+}
+
+.aimates-hero-description {
+  max-width: 650px;
+
+  margin: 16px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.aimates-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+/* =========================================
+   AIMATES HERO PANEL
+   ========================================= */
+
+.aimates-hero-panel {
+  padding: 38px 34px;
+}
+
+.aimates-panel-label {
+  color: var(--text-muted);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.11em;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.aimates-panel-brand {
+  display: flex;
+  align-items: baseline;
+
+  margin-top: 30px;
+
+  font-size: clamp(48px, 4.2vw, 68px);
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 840;
+}
+
+.aimates-panel-brand span {
+  color: var(--accent);
+}
+
+.aimates-panel-brand strong {
+  color: var(--text);
+}
+
+.aimates-panel-tagline {
+  margin: 16px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.aimates-panel-divider {
+  height: 1px;
+
+  margin: 28px 0;
+
+  background: var(--border);
+}
+
+.aimates-panel-pillars {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.aimates-panel-pillars span {
+  min-height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-muted);
+
+  background:
+    rgba(var(--accent-rgb), 0.025);
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+/* =========================================
+   WHY AIMATES
+   ========================================= */
+
+.aimates-why-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.aimates-why-heading {
+  max-width: 790px;
+
+  margin-bottom: 48px;
+}
+
+.aimates-why-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.aimates-why-card {
+  min-height: 280px;
+
+  padding: 28px;
+}
+
+.aimates-why-card-title {
+  margin-top: 22px;
+}
+
+/* =========================================
+   FOUNDER THESIS
+   ========================================= */
+
+.aimates-founder-thesis {
+  max-width: 1050px;
+
+  margin-top: 20px;
+
+  padding: 36px 40px;
+
+  border-left:
+    3px solid var(--accent);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--accent-rgb), 0.07),
+      transparent 72%
+    );
+}
+
+.aimates-founder-thesis-label {
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.11em;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.aimates-founder-thesis blockquote {
+  max-width: 900px;
+
+  margin: 18px 0 0;
+
+  color: var(--text);
+
+  font-size: clamp(23px, 2.4vw, 32px);
+  line-height: 1.4;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 680;
+}
+
+.aimates-founder-thesis blockquote span {
+  color: var(--accent);
+}
+
+.aimates-founder-thesis p {
+  max-width: 760px;
+
+  margin: 18px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   AIMATES ECOSYSTEM
+   ========================================= */
+
+.aimates-ecosystem-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.025),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+.aimates-ecosystem-heading {
+  max-width: 800px;
+
+  margin-bottom: 48px;
+}
+
+.aimates-ecosystem-list {
+  max-width: 1080px;
+
+  border-top:
+    1px solid var(--border);
+}
+
+.aimates-ecosystem-item {
+  display: grid;
+
+  grid-template-columns:
+    54px
+    54px
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  align-items: start;
+
+  padding: 25px 0;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.aimates-ecosystem-number {
+  padding-top: 16px;
+
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.aimates-ecosystem-copy {
+  max-width: 760px;
+
+  padding-top: 7px;
+}
+
+.aimates-ecosystem-copy h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      23px,
+      2vw,
+      30px
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 760;
+}
+
+.aimates-ecosystem-copy p {
+  max-width: 720px;
+
+  margin: 9px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   ECOSYSTEM FLOW
+   ========================================= */
+
+.aimates-ecosystem-flow {
+  max-width: 1080px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 26px;
+
+  padding: 18px 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background:
+    rgba(var(--accent-rgb), 0.025);
+}
+
+.aimates-ecosystem-flow span {
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.aimates-ecosystem-flow strong {
+  color: var(--accent);
+
+  font-size: 13px;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .aimates-hero {
+    min-height: auto;
+
+    padding: 72px 0 82px;
+  }
+
+  .aimates-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 46px;
+  }
+
+  .aimates-hero-panel {
+    max-width: 680px;
+  }
+
+  .aimates-why-section,
+  .aimates-ecosystem-section {
+    padding: 72px 0 82px;
+  }
+
+  .aimates-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aimates-why-card {
+    min-height: auto;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 620px) {
+  .aimates-hero {
+    padding: 54px 0 64px;
+  }
+
+  .aimates-hero-title {
+    font-size:
+      clamp(
+        42px,
+        12vw,
+        56px
+      );
+  }
+
+  .aimates-hero-lead {
+    font-size: 17px;
+  }
+
+  .aimates-hero-description {
+    font-size: 15px;
+  }
+
+  .aimates-hero-actions {
+    flex-direction: column;
+  }
+
+  .aimates-hero-actions .action-primary,
+  .aimates-hero-actions .action-secondary {
+    width: 100%;
+  }
+
+  .aimates-hero-panel {
+    padding: 28px 24px;
+  }
+
+  .aimates-why-section,
+  .aimates-ecosystem-section {
+    padding: 56px 0 64px;
+  }
+
+  .aimates-why-heading,
+  .aimates-ecosystem-heading {
+    margin-bottom: 36px;
+  }
+
+  .aimates-why-card {
+    padding: 22px;
+  }
+
+  .aimates-founder-thesis {
+    margin-top: 18px;
+
+    padding: 28px 22px;
+  }
+
+  .aimates-ecosystem-item {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 22px 0;
+  }
+
+  .aimates-ecosystem-number {
+    display: none;
+  }
+
+  .aimates-ecosystem-copy {
+    padding-top: 5px;
+  }
+
+  .aimates-ecosystem-flow {
+    gap: 8px;
+
+    padding: 16px;
+  }
+}
+/* =========================================
+   WHAT I'M BUILDING
+   ========================================= */
+
+.aimates-building-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.aimates-building-heading {
+  max-width: 800px;
+
+  margin-bottom: 48px;
+}
+
+.aimates-building-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.aimates-building-card {
+  min-height: 255px;
+
+  padding: 28px;
+}
+
+.aimates-building-title {
+  margin-top: 22px;
+}
+
+.aimates-building-note {
+  max-width: 1080px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  margin-top: 20px;
+
+  padding: 20px 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background:
+    rgba(var(--accent-rgb), 0.025);
+}
+
+.aimates-building-status {
+  flex: 0 0 auto;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+.aimates-building-note p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .aimates-building-section {
+    padding: 72px 0 82px;
+  }
+
+  .aimates-building-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .aimates-building-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aimates-building-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .aimates-building-section {
+    padding: 56px 0 64px;
+  }
+
+  .aimates-building-heading {
+    margin-bottom: 36px;
+  }
+
+  .aimates-building-card {
+    padding: 22px;
+  }
+
+  .aimates-building-note {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 18px;
+  }
+}
+/* =========================================
+   FOUNDER ROLE
+   ========================================= */
+
+.aimates-founder-section {
+  padding: 92px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.025),
+      transparent 32%
+    ),
+    var(--background);
+}
+
+.aimates-founder-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.88fr)
+    minmax(420px, 1.12fr);
+
+  gap: 82px;
+
+  align-items: start;
+}
+
+.aimates-founder-heading {
+  max-width: 650px;
+}
+
+.aimates-founder-list {
+  border-top: 1px solid var(--border);
+}
+
+.aimates-founder-item {
+  display: grid;
+
+  grid-template-columns:
+    54px
+    minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 24px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.aimates-founder-copy {
+  padding-top: 4px;
+}
+
+.aimates-founder-copy h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 740;
+}
+
+.aimates-founder-copy p {
+  max-width: 620px;
+
+  margin: 8px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .aimates-founder-section {
+    padding: 72px 0 82px;
+  }
+
+  .aimates-founder-layout {
+    grid-template-columns: 1fr;
+
+    gap: 44px;
+  }
+}
+
+@media (max-width: 620px) {
+  .aimates-founder-section {
+    padding: 56px 0 64px;
+  }
+
+  .aimates-founder-layout {
+    gap: 36px;
+  }
+
+  .aimates-founder-item {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 21px 0;
+  }
+
+  .aimates-founder-copy h3 {
+    font-size: 19px;
+  }
+}
+/* =========================================
+   AIMATES CTA
+   ========================================= */
+
+.aimates-cta-section {
+  padding: 88px 0 105px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.aimates-cta-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.42fr);
+
+  gap: 60px;
+
+  align-items: center;
+
+  padding: 52px 56px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 82% 38%,
+      rgba(var(--accent-rgb), 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(var(--accent-rgb), 0.045),
+      transparent 42%
+    ),
+    var(--surface);
+
+  box-shadow: var(--shadow);
+}
+
+.aimates-cta-copy {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 780px;
+}
+
+.aimates-cta-copy .section-intro {
+  max-width: 650px;
+}
+
+.aimates-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+/* =========================================
+   AIMATES CTA MARK
+   ========================================= */
+
+.aimates-cta-mark {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background:
+    rgba(var(--accent-rgb), 0.035);
+}
+
+.aimates-cta-brand {
+  display: flex;
+
+  align-items: baseline;
+
+  font-size:
+    clamp(
+      46px,
+      4.3vw,
+      66px
+    );
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 820;
+}
+
+.aimates-cta-brand span {
+  color: var(--accent);
+}
+
+.aimates-cta-brand strong {
+  color: var(--text);
+}
+
+.aimates-cta-mark p {
+  margin: 16px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.aimates-cta-status {
+  margin-top: 22px;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  font-size: 9px;
+  font-weight: 750;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .aimates-cta-section {
+    padding: 70px 0 80px;
+  }
+
+  .aimates-cta-card {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding: 42px;
+  }
+
+  .aimates-cta-mark {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 620px) {
+  .aimates-cta-section {
+    padding: 56px 0 64px;
+  }
+
+  .aimates-cta-card {
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+  .aimates-cta-actions {
+    flex-direction: column;
+  }
+
+  .aimates-cta-actions .action-primary,
+  .aimates-cta-actions .action-secondary {
+    width: 100%;
+  }
+
+  .aimates-cta-mark {
+    min-height: 170px;
+  }
+}

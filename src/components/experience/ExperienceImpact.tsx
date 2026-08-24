@@ -59,18 +59,18 @@ export default function ExperienceImpact() {
 
       <div className="site-shell experience-impact-inner">
         <div className="experience-impact-heading">
-          <div className="experience-section-eyebrow">
+          <div className="section-eyebrow">
             Experience in Practice
           </div>
 
-          <h2 className="experience-impact-title">
+          <h2 className="section-title">
             Where experience
             <br />
             becomes{" "}
-            <span>impact.</span>
+            <span className="section-accent">impact.</span>
           </h2>
 
-          <p className="experience-impact-intro">
+          <p className="section-intro">
             The common thread across research,
             engineering, architecture and leadership
             has been simple: turn complex technology

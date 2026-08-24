@@ -87,18 +87,18 @@ export default function ExperienceTimeline() {
     >
       <div className="site-shell">
         <div className="experience-section-heading">
-          <div className="experience-section-eyebrow">
+          <div className="section-eyebrow">
             Career Journey
           </div>
 
-          <h2 className="experience-section-title">
+          <h2 className="section-title">
             Built across research,
             <br />
             enterprise and{" "}
-            <span>AI.</span>
+            <span className="section-accent">AI.</span>
           </h2>
 
-          <p className="experience-section-intro">
+          <p className="section-intro">
             Each stage added a different layer:
             scientific thinking, engineering depth,
             enterprise scale, technology leadership,

@@ -48,18 +48,20 @@ export default function AboutStory() {
     <section className="about-story-section">
       <div className="site-shell">
         <div className="about-story-heading">
-          <div className="about-eyebrow">
+          <div className="section-eyebrow">
             HOW IT STARTED
           </div>
 
-          <h2 className="about-story-title">
+          <h2 className="section-title">
             Before AI,
             <br />
             there was always{" "}
-            <span>curiosity.</span>
+            <span className="section-accent">
+              curiosity.
+            </span>
           </h2>
 
-          <p className="about-story-intro">
+          <p className="section-intro">
             The tools changed. The platforms changed.
             The scale changed. But the habit of learning,
             experimenting and building never really did.

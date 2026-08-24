@@ -12,18 +12,20 @@ export default function AboutNow() {
       <div className="site-shell">
         <div className="about-now-card">
           <div className="about-now-copy">
-            <div className="about-eyebrow">
+            <div className="section-eyebrow">
               THE CURRENT CHAPTER
             </div>
 
-            <h2 className="about-now-title">
+            <h2 className="section-title">
               Still learning.
               <br />
               Still building.{" "}
-              <span>Now with AI.</span>
+              <span className="section-accent">
+                Now with AI.
+              </span>
             </h2>
 
-            <p className="about-now-description">
+            <p className="section-intro">
               Today, much of that journey comes
               together through AIMates, my writing,
               speaking and the ideas behind
@@ -36,7 +38,7 @@ export default function AboutNow() {
             <div className="about-now-actions">
               <Link
                 href="/aimates"
-                className="about-now-primary"
+                className="action-primary"
               >
                 <Sparkles size={18} />
                 Explore AIMates
@@ -45,7 +47,7 @@ export default function AboutNow() {
 
               <Link
                 href="/speaking"
-                className="about-now-secondary"
+                className="action-secondary"
               >
                 <Mic2 size={18} />
                 Speaking
@@ -53,7 +55,7 @@ export default function AboutNow() {
 
               <Link
                 href="/book"
-                className="about-now-secondary"
+                className="action-secondary"
               >
                 <BookOpenText size={18} />
                 The Book

@@ -37,50 +37,30 @@ function isValidTheme(
   );
 }
 
+function getInitialTheme(): ThemeId {
+  if (typeof window === "undefined") {
+    return DEFAULT_THEME;
+  }
+
+  const stored =
+    window.localStorage.getItem(
+      "saurabh-theme",
+    );
+
+  return isValidTheme(stored)
+    ? stored
+    : DEFAULT_THEME;
+}
+
 export function ThemeProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  /*
-   * IMPORTANT:
-   *
-   * Server and first client render MUST
-   * start with the same theme.
-   *
-   * We read localStorage only AFTER
-   * hydration inside useEffect.
-   */
   const [theme, setThemeState] =
-    useState<ThemeId>(DEFAULT_THEME);
-
-  const [hydrated, setHydrated] =
-    useState(false);
+    useState<ThemeId>(getInitialTheme);
 
   useEffect(() => {
-    const stored =
-      window.localStorage.getItem(
-        "saurabh-theme",
-      );
-
-    const initialTheme =
-      isValidTheme(stored)
-        ? stored
-        : DEFAULT_THEME;
-
-    setThemeState(initialTheme);
-
-    document.documentElement.dataset.theme =
-      initialTheme;
-
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) {
-      return;
-    }
-
     document.documentElement.dataset.theme =
       theme;
 
@@ -88,7 +68,7 @@ export function ThemeProvider({
       "saurabh-theme",
       theme,
     );
-  }, [theme, hydrated]);
+  }, [theme]);
 
   function setTheme(
     nextTheme: ThemeId,

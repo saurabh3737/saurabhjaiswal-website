@@ -42,7 +42,7 @@ export default function AboutHero() {
           <div className="about-hero-actions">
             <Link
               href="/experience"
-              className="about-primary-cta"
+              className="action-primary"
             >
               My Journey
               <ArrowRight size={17} />
@@ -50,7 +50,7 @@ export default function AboutHero() {
 
             <Link
               href="/book"
-              className="about-secondary-cta"
+              className="action-secondary"
             >
               <BookOpenText size={18} />
               AI for Real Work

@@ -25,6 +25,16 @@ export const site = {
     title: "AI for Real Work",
     subtitle: "How to Think, Decide, and Build with AI",
     amazonUrl: "https://www.amazon.com/dp/B0GP9QF3YZ",
+    // Local Amazon stores — click-test each one; replace any that don't open the book.
+    stores: [
+      { label: "US", href: "https://www.amazon.com/dp/B0GP9QF3YZ" },
+      { label: "UK", href: "https://www.amazon.co.uk/dp/B0GP9QF3YZ" },
+      { label: "DE", href: "https://www.amazon.de/dp/B0GP9QF3YZ" },
+      { label: "FR", href: "https://www.amazon.fr/dp/B0GP9QF3YZ" },
+      { label: "NL", href: "https://www.amazon.nl/dp/B0GP9QF3YZ" },
+      { label: "BE", href: "https://www.amazon.com.be/dp/B0GP9QF3YZ" },
+      { label: "IN", href: "https://www.amazon.in/dp/B0GP9QF3YZ" },
+    ],
     formats: ["Kindle", "Paperback", "Hardcover"],
     pages: 237,
     published: "March 2026",

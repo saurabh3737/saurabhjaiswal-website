@@ -231,6 +231,22 @@
   margin-top: 14px;
 }
 
+.book-stores {
+  display: block;
+
+  margin-top: 12px;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+.book-stores a {
+  color: var(--accent);
+
+  font-weight: 700;
+}
+
 .home-book-meta {
   margin: 10px 0 0;
 

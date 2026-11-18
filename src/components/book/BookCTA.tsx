@@ -56,6 +56,22 @@ export default function BookCTA() {
                   >
                     Buy on Amazon
                   </a>
+
+                  <span className="book-stores">
+                    Local stores:{" "}
+                    {site.book.stores.map((store, index) => (
+                      <span key={store.href}>
+                        {index > 0 ? " · " : ""}
+                        <a
+                          href={store.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {store.label}
+                        </a>
+                      </span>
+                    ))}
+                  </span>
                 </div>
               </div>
 

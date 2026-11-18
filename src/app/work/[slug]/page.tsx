@@ -7,7 +7,11 @@ import {
   getCaseStudy,
 } from "@/content/projects";
 import { ctas } from "@/content/site";
-import { pageMetadata } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  caseStudyJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -49,6 +53,20 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            caseStudyJsonLd(study),
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Case studies", path: "/work/" },
+              { name: study.client, path: `/work/${study.slug}/` },
+            ]),
+          ]),
+        }}
+      />
+
       <section className="page-hero">
         <div className="page-hero-glow" />
 

@@ -1,29 +1,55 @@
-import PageHero from "@/components/layout/PageHero";
-import { ctas } from "@/content/site";
+import { ArrowUpRight } from "lucide-react";
 
-export const metadata = {
-  title: "Writing",
-  robots: {
-    index: false,
-  },
-};
+import PageHero from "@/components/layout/PageHero";
+import { site } from "@/content/site";
+import { posts } from "@/content/writing";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Writing — Articles on AI, GenAI and Python",
+  description:
+    "Articles by Saurabh Jaiswal on practical AI, generative AI, semantic search, Python projects, data engineering and freelancing in the age of AI.",
+  path: "/writing/",
+});
 
 export default function WritingPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Coming soon"
-        title="Writing"
-        intro="Articles on practical AI, architecture and building with Python are on their way."
+        eyebrow="Writing"
+        title="Notes from"
+        accent="building with AI."
+        intro="Practical articles on AI, generative AI, Python and freelancing — published on my Blogmates blog. These are the ones readers find most useful."
         primary={{
-          label: ctas.bookCall.longLabel,
-          href: ctas.bookCall.href,
+          label: "Visit the blog",
+          href: site.ventures.blog,
         }}
         secondary={{
-          label: "Back to home",
-          href: "/",
+          label: "Read the book",
+          href: "/book/",
         }}
       />
+
+      <section className="home-section">
+        <div className="site-shell">
+          <ul className="writing-list">
+            {posts.map((post) => (
+              <li key={post.href}>
+                <a
+                  href={post.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="writing-item"
+                >
+                  <span className="home-work-client">{post.topic}</span>
+                  <span className="writing-title">{post.title}</span>
+                  <ArrowUpRight size={20} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }

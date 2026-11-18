@@ -727,3 +727,64 @@
 .privacy a {
   color: var(--accent);
 }
+
+
+/* =========================================
+   WRITING
+   ========================================= */
+
+.writing-list {
+  margin: 0;
+  padding: 0;
+
+  border-top: 1px solid var(--border);
+
+  list-style: none;
+}
+
+.writing-item {
+  display: grid;
+
+  grid-template-columns: 170px minmax(0, 1fr) auto;
+
+  gap: 20px;
+
+  align-items: center;
+
+  padding: 22px 4px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text);
+}
+
+.writing-item .home-work-client {
+  margin: 0;
+}
+
+.writing-title {
+  font-size: 19px;
+  font-weight: 700;
+
+  letter-spacing: -0.015em;
+}
+
+.writing-item svg {
+  color: var(--accent);
+}
+
+.writing-item:hover .writing-title {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .writing-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    gap: 6px 14px;
+  }
+
+  .writing-item .home-work-client {
+    grid-column: 1 / -1;
+  }
+}

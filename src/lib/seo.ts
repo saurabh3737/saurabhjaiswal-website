@@ -77,6 +77,9 @@ export function personJsonLd() {
       site.social.python,
       site.ventures.aimates,
       site.ventures.blogmates,
+      site.ventures.pythonmates,
+      site.ventures.blog,
+      site.book.amazonUrl,
     ],
   };
 }
@@ -121,5 +124,52 @@ export function bookJsonLd() {
       "https://schema.org/Paperback",
       "https://schema.org/Hardcover",
     ],
+  };
+}
+
+export function faqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${site.url}${item.path}`,
+    })),
+  };
+}
+
+export function caseStudyJsonLd(study: {
+  slug: string;
+  client: string;
+  title: string;
+  summary: string;
+  stack: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${study.client} — ${study.title}`,
+    description: study.summary,
+    url: `${site.url}/work/${study.slug}/`,
+    keywords: study.stack.join(", "),
+    author: { "@type": "Person", name: site.name, url: site.url },
+    about: { "@type": "Organization", name: study.client },
   };
 }

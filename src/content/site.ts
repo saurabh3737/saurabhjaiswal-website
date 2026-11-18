@@ -1,6 +1,6 @@
 export const site = {
   name: "Saurabh Jaiswal",
-  url: "https://www.saurabhjaiswal.com",
+  url: "https://saurabhjaiswal.com",
 
   role: "Freelance AI Consultant & AI Strategy Advisor",
   skills: "AI · Python · AWS · Azure · GenAI",
@@ -18,8 +18,8 @@ export const site = {
 
   availability: "Open to freelance engagements, partnerships and speaking",
 
-  // Put the PDF in public/resume/ and set the path here to show the download buttons.
-  resumeUrl: "",
+  // Same URL the old site used (ranks on Google). Replace the PDF to update the CV.
+  resumeUrl: "/personal/Saurabh_Jaiswal.pdf",
 
   book: {
     title: "AI for Real Work",
@@ -52,7 +52,8 @@ export const site = {
     aimates: "https://www.aimates.org",
     aimatesVision: "https://www.aimates.org/vision",
     blogmates: "https://www.blogmates.org",
-    pythonmates: "https://www.pythonmates.com",
+    pythonmates: "https://pythonmates.com",
+    blog: "https://blog.saurabhjaiswal.com",
   },
 
   images: {
@@ -141,6 +142,7 @@ export const footerColumns = [
     links: [
       { label: "Speaking", href: "/speaking/" },
       { label: "AI for Real Work", href: "/book/" },
+      { label: "Writing", href: "/writing/" },
       { label: "Invite me to speak", href: contactHref("speaking") },
     ],
   },

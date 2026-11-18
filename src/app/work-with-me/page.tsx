@@ -5,7 +5,8 @@ import EngagementModels from "@/components/work-with-me/EngagementModels";
 import FaqSection from "@/components/work-with-me/FaqSection";
 import SkillsIndustries from "@/components/work-with-me/SkillsIndustries";
 import { ctas, site } from "@/content/site";
-import { pageMetadata } from "@/lib/seo";
+import { faqs } from "@/content/services";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Work With Me — Freelance AI Consultant & AI Strategy Advisor",
@@ -17,6 +18,13 @@ export const metadata = pageMetadata({
 export default function WorkWithMePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd(faqs)),
+        }}
+      />
+
       <PageHero
         eyebrow="Work with me"
         title="Senior AI expertise,"

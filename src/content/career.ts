@@ -264,6 +264,13 @@ export const certifications = [
   "CFA Level I — Candidate",
 ];
 
+// Certificates the old site already hosted — same URLs.
+export const certificateLinks: Record<string, string> = {
+  "AWS Certified Solutions Architect – Associate": "/personal/AWS_SolutionArchitect.pdf",
+  "Certified ScrumMaster® (CSM)": "/personal/Saurabh%20Jaiswal-ScrumAlliance_CSM_Certificate.pdf",
+  "ITIL® Service Management Foundation": "/personal/ITIL_Certification.pdf",
+};
+
 export const achievements = [
   "Author — AI for Real Work: How to Think, Decide, and Build with AI",
   "Speaker — PyCon India 2016 (New Delhi)",

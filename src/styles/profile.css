@@ -298,3 +298,15 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.xp-cert-link {
+  color: var(--text);
+
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--accent-rgb), 0.5);
+  text-underline-offset: 4px;
+}
+
+.xp-cert-link:hover {
+  color: var(--accent);
+}

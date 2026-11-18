@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import {
+  certificateLinks,
   certifications,
   education,
 } from "@/content/career";
@@ -58,7 +59,18 @@ export default function ExperienceEducation() {
           {certifications.map((item) => (
             <li key={item}>
               <CheckCircle2 size={18} />
-              {item}
+              {certificateLinks[item] ? (
+                <a
+                  href={certificateLinks[item]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="xp-cert-link"
+                >
+                  {item}
+                </a>
+              ) : (
+                item
+              )}
             </li>
           ))}
         </ul>

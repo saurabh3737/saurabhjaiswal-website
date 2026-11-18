@@ -1,0 +1,91 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/backup.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/index.html",
+      "destination": "/book/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal/index.html",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/saurabh_resume.pdf",
+      "destination": "/personal/Saurabh_Jaiswal.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal/Saurabh_Jaiswal_old.pdf",
+      "destination": "/personal/Saurabh_Jaiswal.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal/Saurabh_Jaiswal_21may2024.pdf",
+      "destination": "/personal/Saurabh_Jaiswal.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/ITIL_Certification.pdf",
+      "destination": "/personal/ITIL_Certification.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/branded.me/:path*",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ventures",
+      "destination": "/aimates/#venture-journey",
+      "statusCode": 301
+    },
+    {
+      "source": "/ventures/",
+      "destination": "/aimates/#venture-journey",
+      "statusCode": 301
+    },
+    {
+      "source": "/pythonmates",
+      "destination": "https://pythonmates.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pythonmates/:path*",
+      "destination": "https://pythonmates.com/:path*",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/personal/(.*)\\.pdf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
+  ]
+}

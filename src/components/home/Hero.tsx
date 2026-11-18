@@ -5,6 +5,8 @@ import {
   Rocket,
 } from "lucide-react";
 
+import { ctas, site } from "@/content/site";
+
 import ProofStrip from "./ProofStrip";
 
 export default function Hero() {
@@ -15,55 +17,50 @@ export default function Hero() {
       <div className="site-shell hero-grid">
         <div className="hero-content">
           <div className="hero-eyebrow">
-            <span>Founder</span>
+            <span>Freelance AI Consultant</span>
             <span className="hero-dot">•</span>
-            <span>AI Strategist</span>
+            <span>AI Strategy Advisor</span>
             <span className="hero-dot">•</span>
-            <span>AI Architect</span>
-            <span className="hero-dot">•</span>
-            <span>Author</span>
-            <span className="hero-dot">•</span>
-            <span>Speaker</span>
+            <span>Python · AWS · Azure</span>
           </div>
 
           <h1 className="hero-title">
-            Building technology
+            Turning AI strategy
             <br />
-            that turns{" "}
+            into{" "}
             <span className="accent-text">
-              AI into
+              real work
             </span>
             <br />
-            <span className="accent-text">
-              real work.
-            </span>
+            that ships.
           </h1>
 
           <div className="hero-accent-line" />
 
           <p className="hero-description">
-            Founder of AIMates, author of{" "}
-            <em>AI for Real Work</em>, and an AI
-            strategist &amp; architect with 15+ years
-            across AI, cloud, enterprise engineering
-            and defence research.
+            I help teams decide where AI really pays
+            off — then build it with Python, AWS and
+            Azure. 15+ years across Amazon, KBC, ING,
+            JPMorgan Chase and DRDO research. Founder
+            of AIMates and author of{" "}
+            <em>AI for Real Work</em>.
           </p>
 
           <div className="hero-actions">
             <Link
-              href="/experience"
+              href={ctas.bookCall.href}
               className="primary-cta"
             >
-              <Rocket size={18} />
-              <span>Explore My Work</span>
+              <CalendarDays size={18} />
+              <span>{ctas.bookCall.longLabel}</span>
             </Link>
 
             <Link
-              href="/speaking"
+              href="/experience/"
               className="secondary-cta"
             >
-              <CalendarDays size={18} />
-              <span>Invite Me to Speak</span>
+              <Rocket size={18} />
+              <span>Explore My Work</span>
             </Link>
           </div>
 
@@ -73,8 +70,8 @@ export default function Hero() {
         <div className="hero-media">
           <div className="hero-composition">
             <Image
-              src="/images/home/saurabh-hero-composition.png"
-              alt="Saurabh Jaiswal, founder of AIMates and author of AI for Real Work"
+              src={site.images.hero}
+              alt="Saurabh Jaiswal, freelance AI consultant, founder of AIMates and author of AI for Real Work"
               fill
               priority
               sizes="(max-width: 900px) 100vw, 55vw"

@@ -1,30 +1,30 @@
 import {
+  BookOpenText,
   Building2,
   BriefcaseBusiness,
-  FlaskConical,
   ShieldCheck,
 } from "lucide-react";
 
 const proofItems = [
+  {
+    icon: BriefcaseBusiness,
+    top: "Freelance",
+    bottom: "AI Consultant & Advisor",
+  },
+  {
+    icon: Building2,
+    top: "Trusted by",
+    bottom: "Amazon · KBC · ING",
+  },
   {
     icon: ShieldCheck,
     top: "Founder",
     bottom: "AIMates",
   },
   {
-    icon: BriefcaseBusiness,
-    top: "Independent",
-    bottom: "AI & Cloud Consultant",
-  },
-    {
-      icon: Building2,
-      top: "Former",
-      bottom: "JPMorgan Chase AVP",
-    },
-  {
-    icon: FlaskConical,
-    top: "Former",
-    bottom: "DRDO Researcher",
+    icon: BookOpenText,
+    top: "Author",
+    bottom: "AI for Real Work",
   },
 ];
 

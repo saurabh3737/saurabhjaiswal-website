@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
 
-  gap: 31px;
+  gap: clamp(16px, 1.7vw, 30px);
 }
 
 .nav-link {
@@ -44,6 +44,8 @@
 
   font-size: 15px;
   font-weight: 500;
+
+  white-space: nowrap;
 
   transition:
     opacity 150ms ease,
@@ -78,53 +80,91 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.ask-ai-button,
-.theme-trigger {
-  min-height: 46px;
-  border-radius: 13px;
+/* =========================================
+   THEME TOGGLE (dark / light)
+   ========================================= */
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  color: var(--text);
+  background: var(--surface);
+
+  cursor: pointer;
+
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
-.ask-ai-button {
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--border-strong);
+}
+
+/* =========================================
+   HEADER CTA — BOOK A CALL
+   ========================================= */
+
+.header-cta {
+  min-height: 44px;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
 
   padding: 0 18px;
 
-  border: 1px solid var(--border-strong);
+  border-radius: 12px;
 
-  color: var(--accent);
+  color: #080b0e;
+  background: var(--accent);
 
-  background: rgba(var(--accent-rgb), 0.06);
+  font-size: 14px;
+  font-weight: 700;
 
-  font-weight: 650;
+  white-space: nowrap;
+
+  box-shadow:
+    0 10px 24px
+    rgba(var(--accent-rgb), 0.18);
 
   transition:
     transform 160ms ease,
-    background 160ms ease;
+    box-shadow 160ms ease;
 }
 
-.ask-ai-button:hover {
+.header-cta:hover {
   transform: translateY(-1px);
 
-  background: rgba(var(--accent-rgb), 0.12);
+  box-shadow:
+    0 14px 30px
+    rgba(var(--accent-rgb), 0.26);
 }
 
-.theme-switcher {
-  position: relative;
-}
+/* =========================================
+   MOBILE MENU (shown below 1180px)
+   ========================================= */
 
-.theme-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.mobile-menu-toggle {
+  width: 44px;
+  height: 44px;
 
-  padding: 0 13px;
+  display: none;
+  place-items: center;
 
   border: 1px solid var(--border);
+  border-radius: 12px;
 
   color: var(--text);
   background: var(--surface);
@@ -132,34 +172,18 @@
   cursor: pointer;
 }
 
-.theme-trigger-label {
-  max-width: 120px;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.theme-chevron {
-  transition: transform 160ms ease;
-}
-
-.theme-chevron-open {
-  transform: rotate(180deg);
-}
-
-.theme-menu {
+.mobile-menu-panel {
   position: absolute;
-
-  top: calc(100% + 10px);
+  top: 100%;
+  left: 0;
   right: 0;
 
-  width: 235px;
+  display: flex;
+  flex-direction: column;
 
-  padding: 8px;
+  padding: 12px 22px 22px;
 
-  border: 1px solid var(--border);
-  border-radius: 15px;
+  border-bottom: 1px solid var(--border);
 
   background: var(--surface-strong);
 
@@ -168,61 +192,41 @@
   backdrop-filter: blur(20px);
 }
 
-.theme-option {
-  width: 100%;
+.mobile-menu-link {
+  padding: 14px 4px;
 
-  display: grid;
-  grid-template-columns: 14px 1fr 18px;
+  border-bottom: 1px solid var(--border);
 
-  gap: 10px;
-
-  align-items: center;
-
-  padding: 11px 10px;
-
-  border: 0;
-  border-radius: 10px;
-
-  background: transparent;
   color: var(--text);
 
-  text-align: left;
-
-  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
 }
 
-.theme-option:hover,
-.theme-option-active {
-  background: rgba(var(--accent-rgb), 0.11);
-}
-
-.theme-check {
+.mobile-menu-link:hover {
   color: var(--accent);
 }
 
-.theme-dot {
-  width: 11px;
-  height: 11px;
-
-  border-radius: 999px;
+.mobile-menu-cta {
+  margin-top: 18px;
 }
 
-.theme-dot-founder-noir {
-  background: #f4b23c;
+@media (max-width: 1180px) {
+  .mobile-menu-toggle {
+    display: grid;
+  }
 }
 
-.theme-dot-executive-light {
-  background: #d49a43;
-}
+@media (max-width: 620px) {
+  .header-cta span {
+    display: none;
+  }
 
-.theme-dot-ai-ember {
-  background: #ff4d4f;
-}
+  .header-cta {
+    width: 44px;
 
-.theme-dot-research-blue {
-  background: #42b8ff;
-}
+    padding: 0;
 
-.theme-dot-emerald-intelligence {
-  background: #31d095;
+    justify-content: center;
+  }
 }

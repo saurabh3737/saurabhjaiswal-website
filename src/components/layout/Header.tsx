@@ -1,38 +1,9 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
+import MobileMenu from "@/components/layout/MobileMenu";
 import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
-
-const navItems = [
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Experience",
-    href: "/experience",
-  },
-  {
-    label: "Speaking",
-    href: "/speaking",
-  },
-  {
-    label: "Writing",
-    href: "/writing",
-  },
-  {
-    label: "Book",
-    href: "/book",
-  },
-  {
-    label: "Ventures",
-    href: "/ventures",
-  },
-  {
-    label: "AIMates",
-    href: "/aimates",
-  },
-];
+import { ctas, navItems, site } from "@/content/site";
 
 export default function Header() {
   return (
@@ -43,7 +14,7 @@ export default function Header() {
           className="brand"
         >
           <span className="brand-name">
-            Saurabh Jaiswal
+            {site.name}
           </span>
         </Link>
 
@@ -66,12 +37,14 @@ export default function Header() {
           <ThemeSwitcher />
 
           <Link
-            href="/ask"
-            className="ask-ai-button"
+            href={ctas.bookCall.href}
+            className="header-cta"
           >
-            <span>Ask Saurabh AI</span>
-            <Sparkles size={16} />
+            <CalendarDays size={16} />
+            <span>{ctas.bookCall.label}</span>
           </Link>
+
+          <MobileMenu />
         </div>
       </div>
     </header>

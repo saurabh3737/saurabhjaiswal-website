@@ -7,6 +7,8 @@ import {
   Network,
 } from "lucide-react";
 
+import { site } from "@/content/site";
+
 const contactReasons = [
   {
     icon: BriefcaseBusiness,
@@ -62,7 +64,7 @@ export default function ContactHero() {
           </p>
 
           <a
-            href="mailto:saurabh@saurabhjaiswal.com"
+            href={`mailto:${site.email}`}
             className="action-primary contact-email"
           >
             <Mail size={18} />

@@ -13,6 +13,7 @@
 @import "../styles/aimates.css";
 @import "../styles/ventures.css";
 @import "../styles/contact.css";
+@import "../styles/footer.css";
 
 * {
   box-sizing: border-box;

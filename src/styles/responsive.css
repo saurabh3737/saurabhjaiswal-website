@@ -80,14 +80,6 @@
     font-size: 24px;
   }
 
-  .theme-trigger-label {
-    display: none;
-  }
-
-  .ask-ai-button span {
-    display: none;
-  }
-
   .hero-section {
     min-height: 0;
 
@@ -152,13 +144,6 @@
 @media (max-width: 620px) {
   .header-actions {
     gap: 7px;
-  }
-
-  .theme-trigger,
-  .ask-ai-button {
-    min-width: 44px;
-
-    padding: 0 11px;
   }
 
   .hero-media {

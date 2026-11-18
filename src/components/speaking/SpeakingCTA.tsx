@@ -5,6 +5,8 @@ import {
   Mic2,
 } from "lucide-react";
 
+import { ctas, site } from "@/content/site";
+
 export default function SpeakingCTA() {
   return (
     <section className="speaking-cta-section">
@@ -35,7 +37,7 @@ export default function SpeakingCTA() {
 
             <div className="speaking-cta-actions">
               <Link
-                href="/contact"
+                href={ctas.speak.href}
                 className="action-primary"
               >
                 <Mic2 size={18} />
@@ -44,7 +46,7 @@ export default function SpeakingCTA() {
               </Link>
 
               <a
-                href="mailto:saurabh@aimates.org"
+                href={`mailto:${site.email}`}
                 className="action-secondary"
               >
                 <Mail size={18} />

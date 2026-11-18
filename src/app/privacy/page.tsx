@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Privacy",
   description:
-    "How saurabhjaiswal.com handles your data: no tracking cookies, no analytics, and contact messages sent only by email.",
+    "How saurabhjaiswal.com handles your data: no tracking cookies, no analytics, and contact messages delivered only to my inbox.",
   path: "/privacy/",
 });
 
@@ -35,11 +35,19 @@ export default function PrivacyPage() {
 
         <h2>Contact form</h2>
         <p>
-          The contact form does not store anything on a
-          server. It opens your own email app with your
-          message ready to send to {site.email}. I only use
-          what you send me to reply to you, and I do not
-          share it with anyone.
+          When you send the contact form, your name, email,
+          company (if given) and message are delivered to my
+          inbox ({site.email}) through Resend, an email delivery
+          service. The website itself does not store your
+          message. I only use what you send me to reply to you,
+          and I do not share it with anyone.
+        </p>
+
+        <h2>Hosting</h2>
+        <p>
+          The site is hosted on Vercel. Like any web host, it
+          processes standard request data such as IP addresses
+          to deliver pages and protect against abuse.
         </p>
 
         <h2>Your rights</h2>

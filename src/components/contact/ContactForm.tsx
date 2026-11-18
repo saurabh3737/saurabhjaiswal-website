@@ -45,7 +45,10 @@ export default function ContactForm({
   const [terms, setTerms] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Errors>({});
-  const [sent, setSent] = useState(false);
+  const [website, setWebsite] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "fallback"
+  >("idle");
   const [copied, setCopied] = useState(false);
 
   const selected =
@@ -69,16 +72,7 @@ export default function ContactForm({
     return next;
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const found = validate();
-    setErrors(found);
-
-    if (Object.keys(found).length > 0) {
-      return;
-    }
-
+  function openEmailApp() {
     const details = [
       `Topic: ${selected.label}`,
       `Name: ${name.trim()}`,
@@ -93,13 +87,49 @@ export default function ContactForm({
       company.trim() ? ` (${company.trim()})` : ""
     }`;
 
-    const href =
+    window.location.href =
       `mailto:${site.email}` +
       `?subject=${encodeURIComponent(subject)}` +
       `&body=${encodeURIComponent(body)}`;
+  }
 
-    window.location.href = href;
-    setSent(true);
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const found = validate();
+    setErrors(found);
+
+    if (Object.keys(found).length > 0) {
+      return;
+    }
+
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reason,
+          name,
+          email,
+          company,
+          terms,
+          message,
+          website,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+        return;
+      }
+    } catch {
+      // Network problem — fall through to the email-app fallback.
+    }
+
+    setStatus("fallback");
+    openEmailApp();
   }
 
   async function copyEmail() {
@@ -239,26 +269,50 @@ export default function ContactForm({
         ) : null}
       </label>
 
-      <button
-        type="submit"
-        className="action-primary contact-submit"
+      <label
+        className="contact-honeypot"
+        aria-hidden="true"
       >
-        <Send size={17} />
-        Send message
-      </button>
+        Website
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(event) => setWebsite(event.target.value)}
+        />
+      </label>
 
-      <p className="contact-hint">
-        This opens your email app with the message ready to send.
-      </p>
-
-      {sent ? (
+      {status === "sent" ? (
         <div
           className="contact-sent"
           role="status"
         >
           <p>
-            Didn&apos;t open? Email me directly at{" "}
-            <strong>{site.email}</strong>
+            <strong>Thanks, {name.trim().split(" ")[0]} — your message is on its way.</strong>{" "}
+            I read every message personally and will reply to {email.trim()}.
+          </p>
+        </div>
+      ) : (
+        <button
+          type="submit"
+          className="action-primary contact-submit"
+          disabled={status === "sending"}
+        >
+          <Send size={17} />
+          {status === "sending" ? "Sending…" : "Send message"}
+        </button>
+      )}
+
+      {status === "fallback" ? (
+        <div
+          className="contact-sent"
+          role="status"
+        >
+          <p>
+            The form couldn&apos;t send right now, so your email app
+            should have opened with the message ready. If it didn&apos;t,
+            email me directly at <strong>{site.email}</strong>
           </p>
 
           <button

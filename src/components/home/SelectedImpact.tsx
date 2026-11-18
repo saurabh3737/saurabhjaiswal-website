@@ -32,9 +32,10 @@ export default function SelectedImpact() {
 
         <div className="home-work-grid">
           {featuredWork.map((work) => (
-            <article
+            <Link
               key={work.title}
-              className="surface-card home-work-card"
+              href={`/work/${work.slug}/`}
+              className="surface-card home-work-card work-card"
             >
               <div className="home-work-client">
                 {work.client}
@@ -53,7 +54,12 @@ export default function SelectedImpact() {
                   <li key={tag}>{tag}</li>
                 ))}
               </ul>
-            </article>
+
+              <span className="work-card-link">
+                Read case study
+                <ArrowRight size={16} />
+              </span>
+            </Link>
           ))}
         </div>
 
@@ -68,10 +74,10 @@ export default function SelectedImpact() {
 
         <div className="home-section-actions">
           <Link
-            href="/experience/"
+            href="/work/"
             className="action-secondary"
           >
-            See full experience
+            All case studies
             <ArrowRight size={17} />
           </Link>
         </div>

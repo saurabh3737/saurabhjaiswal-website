@@ -1,0 +1,43 @@
+import ContactCTA from "@/components/home/ContactCTA";
+import Services from "@/components/home/Services";
+import PageHero from "@/components/layout/PageHero";
+import EngagementModels from "@/components/work-with-me/EngagementModels";
+import FaqSection from "@/components/work-with-me/FaqSection";
+import SkillsIndustries from "@/components/work-with-me/SkillsIndustries";
+import { ctas, site } from "@/content/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Work With Me — Freelance AI Consultant & AI Strategy Advisor",
+  description:
+    "Hire Saurabh Jaiswal as a freelance AI consultant, AI strategy advisor or hands-on AI, Python, AWS and Azure engineer. Advisory, project delivery, embedded expert and workshops — Belgium and worldwide.",
+  path: "/work-with-me/",
+});
+
+export default function WorkWithMePage() {
+  return (
+    <main>
+      <PageHero
+        eyebrow="Work with me"
+        title="Senior AI expertise,"
+        accent="without the full-time hire."
+        intro="I help companies decide where AI pays off and then build it — as an advisor, an architect or a hands-on engineer inside your team. AI, Python, AWS and Azure, with 15+ years of enterprise delivery behind it."
+        primary={{
+          label: ctas.bookCall.longLabel,
+          href: ctas.bookCall.href,
+        }}
+        secondary={{
+          label: "See case studies",
+          href: "/work/",
+        }}
+        note={`${site.availability} · ${site.location.label}`}
+      />
+
+      <Services />
+      <EngagementModels />
+      <SkillsIndustries />
+      <FaqSection />
+      <ContactCTA />
+    </main>
+  );
+}

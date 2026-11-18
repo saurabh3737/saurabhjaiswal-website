@@ -56,7 +56,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/experience/"
+              href="/work/"
               className="secondary-cta"
             >
               <Rocket size={18} />

@@ -93,13 +93,13 @@ export const ctas = {
   },
 } as const;
 
-// Work With Me + Case Studies join the nav in patch 03, when those pages exist.
 export const navItems = [
-  { label: "About", href: "/about/" },
-  { label: "Experience", href: "/experience/" },
+  { label: "Work With Me", href: "/work-with-me/" },
+  { label: "Case Studies", href: "/work/" },
   { label: "Speaking", href: "/speaking/" },
   { label: "AIMates", href: "/aimates/" },
   { label: "Book", href: "/book/" },
+  { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ] as const;
 
@@ -107,6 +107,8 @@ export const footerColumns = [
   {
     title: "Work with me",
     links: [
+      { label: "Services", href: "/work-with-me/" },
+      { label: "Case studies", href: "/work/" },
       { label: "Experience", href: "/experience/" },
       { label: "Book a call", href: contactHref("consulting") },
     ],

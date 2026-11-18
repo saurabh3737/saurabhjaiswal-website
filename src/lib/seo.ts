@@ -80,3 +80,38 @@ export function personJsonLd() {
     ],
   };
 }
+
+export function professionalServiceJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: `${site.name} — ${site.role}`,
+    url: site.url,
+    image: `${site.url}${site.images.hero}`,
+    email: site.email,
+    founder: { "@type": "Person", name: site.name },
+    areaServed: ["Belgium", "Europe", "Worldwide"],
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: site.location.country,
+    },
+    serviceType: [
+      "AI strategy and advisory",
+      "Generative AI, LLM and AI agent development",
+      "AI and cloud engineering (Python, AWS, Azure)",
+      "AI training and workshops",
+    ],
+  };
+}
+
+export function bookJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: "AI for Real Work: How to Think, Decide, and Build with AI",
+    author: { "@type": "Person", name: site.name, url: site.url },
+    image: `${site.url}${site.images.bookCover}`,
+    url: `${site.url}/book/`,
+    inLanguage: "en",
+  };
+}

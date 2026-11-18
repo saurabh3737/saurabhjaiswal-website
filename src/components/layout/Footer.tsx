@@ -94,7 +94,13 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <div>
-            © {year} {site.name}. All rights reserved.
+            © {year} {site.name}. All rights reserved. ·{" "}
+            <Link
+              href="/privacy/"
+              className="footer-link"
+            >
+              Privacy
+            </Link>
           </div>
 
           <div className="footer-social">

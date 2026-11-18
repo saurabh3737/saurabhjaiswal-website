@@ -673,3 +673,57 @@
 .redirect-page a {
   color: var(--accent);
 }
+
+
+/* =========================================
+   SKIP LINK, 404, PRIVACY
+   ========================================= */
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+
+  padding: 10px 16px;
+
+  color: #080b0e;
+
+  border-radius: 8px;
+
+  background: var(--accent);
+
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.not-found {
+  min-height: 70vh;
+}
+
+.privacy {
+  max-width: 780px;
+}
+
+.privacy h2 {
+  margin: 40px 0 0;
+
+  color: var(--text);
+
+  font-size: 20px;
+  font-weight: 760;
+}
+
+.privacy p {
+  color: var(--text-muted);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.privacy a {
+  color: var(--accent);
+}

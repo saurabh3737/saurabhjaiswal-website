@@ -4,7 +4,10 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { site } from "@/content/site";
-import { personJsonLd } from "@/lib/seo";
+import {
+  personJsonLd,
+  professionalServiceJsonLd,
+} from "@/lib/seo";
 
 import "./globals.css";
 
@@ -28,9 +31,6 @@ export const metadata: Metadata = {
     "AI for Real Work",
   ],
   authors: [{ name: site.name, url: site.url }],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     url: "/",
@@ -62,13 +62,23 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personJsonLd()),
+            __html: JSON.stringify([
+              personJsonLd(),
+              professionalServiceJsonLd(),
+            ]),
           }}
         />
 
+        <a
+          href="#main-content"
+          className="skip-link"
+        >
+          Skip to content
+        </a>
+
         <ThemeProvider>
           <Header />
-          {children}
+          <div id="main-content">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

@@ -8,6 +8,8 @@ unoptimized: true,
 },
 
 trailingSlash: true,
+
+allowedDevOrigins: ["192.168.0.109", "*.local"],
 };
 
 export default nextConfig;

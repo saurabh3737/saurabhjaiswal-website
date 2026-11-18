@@ -224,22 +224,20 @@
 
 
 /* =========================================
-   BOOK — BUY LINKS
+   BOOK — BUY
    ========================================= */
 
-.book-buy-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 8px;
+.book-buy-button {
+  margin-top: 14px;
 }
 
-.book-buy-links a {
-  color: var(--accent);
+.home-book-meta {
+  margin: 10px 0 0;
 
-  font-weight: 700;
+  color: var(--text-muted);
+
+  font-size: 14px;
+  font-weight: 600;
 }
 
 

@@ -35,7 +35,13 @@ export default function BookFeature() {
           </h2>
 
           <p className="home-book-subtitle">
-            How to Think, Decide, and Build with AI
+            {site.book.subtitle}
+          </p>
+
+          <p className="home-book-meta">
+            Published {site.book.published} ·{" "}
+            {site.book.pages} pages ·{" "}
+            {site.book.formats.join(" · ")}
           </p>
 
           <p className="section-intro">
@@ -46,12 +52,21 @@ export default function BookFeature() {
           </p>
 
           <div className="home-section-actions">
-            <Link
-              href="/book/"
+            <a
+              href={site.book.amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="action-primary"
             >
-              Discover the book
+              Buy on Amazon
               <ArrowRight size={17} />
+            </a>
+
+            <Link
+              href="/book/"
+              className="action-secondary"
+            >
+              Discover the book
             </Link>
 
             <Link

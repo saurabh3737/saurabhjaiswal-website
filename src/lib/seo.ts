@@ -112,6 +112,14 @@ export function bookJsonLd() {
     author: { "@type": "Person", name: site.name, url: site.url },
     image: `${site.url}${site.images.bookCover}`,
     url: `${site.url}/book/`,
+    sameAs: [site.book.amazonUrl],
     inLanguage: "en",
+    datePublished: site.book.datePublished,
+    numberOfPages: site.book.pages,
+    bookFormat: [
+      "https://schema.org/EBook",
+      "https://schema.org/Paperback",
+      "https://schema.org/Hardcover",
+    ],
   };
 }

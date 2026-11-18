@@ -5,7 +5,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import { ctas } from "@/content/site";
+import { ctas, site } from "@/content/site";
 
 export default function BookHero() {
   return (
@@ -40,13 +40,22 @@ export default function BookHero() {
           </p>
 
           <div className="book-hero-actions">
+            <a
+              href={site.book.amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-primary"
+            >
+              Buy on Amazon
+              <ArrowRight size={17} />
+            </a>
+
             <Link
               href="#inside-the-book"
-              className="action-primary"
+              className="action-secondary"
             >
               <BookOpenText size={18} />
               Explore the Book
-              <ArrowRight size={17} />
             </Link>
 
             <Link

@@ -40,35 +40,22 @@ export default function BookCTA() {
 
                 <div>
                   <strong>
-                    Buying options
+                    Available now
                   </strong>
 
-                  {site.book.buyLinks.length > 0 ? (
-                    <span className="book-buy-links">
-                      {site.book.buyLinks.map((link) => (
-                        <a
-                          key={link.href}
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.label}
-                        </a>
-                      ))}
-                    </span>
-                  ) : (
-                    <span>
-                      Launching soon — follow me on{" "}
-                      <a
-                        href={site.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        LinkedIn
-                      </a>{" "}
-                      for the release.
-                    </span>
-                  )}
+                  <span>
+                    {site.book.formats.join(" · ")} on Amazon —
+                    available in all Amazon marketplaces.
+                  </span>
+
+                  <a
+                    href={site.book.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="action-primary book-buy-button"
+                  >
+                    Buy on Amazon
+                  </a>
                 </div>
               </div>
 

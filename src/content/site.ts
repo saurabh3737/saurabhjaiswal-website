@@ -22,9 +22,13 @@ export const site = {
   resumeUrl: "",
 
   book: {
-    // Add store links when the book is on sale, e.g.
-    // { label: "Amazon", href: "https://www.amazon.com/..." }
-    buyLinks: [] as { label: string; href: string }[],
+    title: "AI for Real Work",
+    subtitle: "How to Think, Decide, and Build with AI",
+    amazonUrl: "https://www.amazon.com/dp/B0GP9QF3YZ",
+    formats: ["Kindle", "Paperback", "Hardcover"],
+    pages: 237,
+    published: "March 2026",
+    datePublished: "2026-03-09",
   },
 
   social: {

@@ -20,8 +20,8 @@ export default function WorkWithMePage() {
       <PageHero
         eyebrow="Work with me"
         title="Senior AI expertise,"
-        accent="without the full-time hire."
-        intro="I help companies decide where AI pays off and then build it — as an advisor, an architect or a hands-on engineer inside your team. AI, Python, AWS and Azure, with 15+ years of enterprise delivery behind it."
+        accent="freelance, on your terms."
+        intro="I help companies decide where AI pays off and then build it — as an advisor, an architect or a hands-on engineer inside your team. Full-time or part-time, short or long term, on a daily rate or a fixed scope. AI, Python, AWS and Azure, with 15+ years of enterprise delivery behind it."
         primary={{
           label: ctas.bookCall.longLabel,
           href: ctas.bookCall.href,

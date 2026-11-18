@@ -77,6 +77,16 @@
   right: 0;
 }
 
+.nav-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
 .header-actions {
   display: flex;
   align-items: center;

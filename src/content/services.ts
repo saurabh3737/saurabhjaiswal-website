@@ -131,6 +131,28 @@ export const engagementModels = [
   },
 ];
 
+export const workingPatterns = [
+  "Full-time freelance (5 days a week)",
+  "Part-time (e.g. 2–3 days a week)",
+  "Alternate weeks",
+  "Short-term (weeks)",
+  "Long-term contracts (months to years)",
+  "Monthly engagements",
+  "Project scope / fixed deliverables",
+  "Remote, onsite in Belgium or hybrid",
+];
+
+export const pricingModels = [
+  {
+    title: "Daily rate",
+    text: "For advisory, embedded and long-term contract work.",
+  },
+  {
+    title: "Fixed scope",
+    text: "A fixed price for a clearly defined project or workshop.",
+  },
+];
+
 export const processSteps = [
   {
     title: "Discover",
@@ -212,7 +234,12 @@ export const faqs = [
   {
     question: "How do engagements usually work?",
     answer:
-      "As a freelance contract — on a daily rate for advisory and embedded work, or a fixed scope for well-defined projects and workshops. We agree the shape on a first call.",
+      "As a freelance contractor — on a daily rate, or a fixed price for a clearly defined scope. Full-time (5 days a week) or part-time (for example 3 days a week or alternate weeks), short-term or long-term, monthly or project-based. We agree the shape on a first call.",
+  },
+  {
+    question: "Do you take permanent roles?",
+    answer:
+      "Not at the moment. I work as a freelance consultant and contractor — including full-time, long-term contracts.",
   },
   {
     question: "Which languages do you work in?",

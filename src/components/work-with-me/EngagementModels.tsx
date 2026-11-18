@@ -1,6 +1,10 @@
+import { CheckCircle2 } from "lucide-react";
+
 import {
   engagementModels,
+  pricingModels,
   processSteps,
+  workingPatterns,
 } from "@/content/services";
 
 export default function EngagementModels() {
@@ -38,6 +42,38 @@ export default function EngagementModels() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="wwm-terms">
+          <div>
+            <h3 className="wwm-subhead">
+              Flexible terms
+            </h3>
+
+            <ul className="wwm-check-list wwm-terms-list">
+              {workingPatterns.map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={17} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="wwm-subhead">
+              Pricing
+            </h3>
+
+            <ul className="wwm-plain-list wwm-pricing">
+              {pricingModels.map((item) => (
+                <li key={item.title}>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <h3 className="wwm-subhead">

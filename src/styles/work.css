@@ -327,6 +327,31 @@
 }
 
 
+.wwm-terms {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+
+  gap: 50px;
+}
+
+.wwm-terms-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 24px;
+}
+
+.wwm-pricing li {
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 14px 0;
+}
+
+
 /* =========================================
    CASE STUDIES
    ========================================= */
@@ -596,6 +621,7 @@
   }
 
   .wwm-columns,
+  .wwm-terms,
   .wwm-faq-layout,
   .work-other,
   .case-layout {
@@ -617,6 +643,10 @@
 }
 
 @media (max-width: 620px) {
+  .wwm-terms-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .wwm-process,
   .wwm-skills-grid {
     grid-template-columns: minmax(0, 1fr);

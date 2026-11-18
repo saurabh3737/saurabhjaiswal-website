@@ -125,7 +125,7 @@ export const footerColumns = [
     title: "Building",
     links: [
       { label: "AIMates", href: "/aimates/" },
-      { label: "My ventures journey", href: "/ventures/" },
+      { label: "My ventures journey", href: "/aimates/#venture-journey" },
       { label: "Partner with AIMates", href: contactHref("aimates") },
       { label: "About me", href: "/about/" },
     ],

@@ -1,6 +1,4 @@
-import Link from "next/link";
 import {
-  ArrowRight,
   BookOpenText,
   Code2,
   Sparkles,
@@ -30,7 +28,6 @@ const ventures = [
     phase: "Build an Ecosystem",
     text:
       "AIMates is the current and much larger chapter: bringing learning, building, people, opportunities and contribution together around practical AI.",
-    href: "/aimates",
     flagship: true,
   },
 ];
@@ -94,15 +91,6 @@ export default function VenturesJourney() {
 
                   <p>{venture.text}</p>
 
-                  {venture.href ? (
-                    <Link
-                      href={venture.href}
-                      className="ventures-journey-link"
-                    >
-                      Explore {venture.name}
-                      <ArrowRight size={16} />
-                    </Link>
-                  ) : null}
                 </div>
               </article>
             );

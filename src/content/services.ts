@@ -145,11 +145,31 @@ export const workingPatterns = [
 export const pricingModels = [
   {
     title: "Daily rate",
-    text: "For advisory, embedded and long-term contract work.",
+    text: "Contract, advisory and embedded work.",
   },
   {
     title: "Fixed scope",
-    text: "A fixed price for a clearly defined project or workshop.",
+    text: "A fixed price for a clearly defined project.",
+  },
+  {
+    title: "Monthly retainer",
+    text: "A set number of advisory days each month.",
+  },
+  {
+    title: "AI discovery sprint",
+    text: "1–2 weeks: use cases, data readiness and a roadmap — at a fixed price.",
+  },
+  {
+    title: "Milestone-based",
+    text: "Prototype → pilot → production, paid per milestone.",
+  },
+  {
+    title: "Advisory calls",
+    text: "Hourly expert calls and architecture reviews.",
+  },
+  {
+    title: "Workshop day rate",
+    text: "Half-day or full-day training sessions.",
   },
 ];
 
@@ -234,7 +254,7 @@ export const faqs = [
   {
     question: "How do engagements usually work?",
     answer:
-      "As a freelance contractor — on a daily rate, or a fixed price for a clearly defined scope. Full-time (5 days a week) or part-time (for example 3 days a week or alternate weeks), short-term or long-term, monthly or project-based. We agree the shape on a first call.",
+      "As a freelance contractor — usually on a daily rate or a fixed price for a clear scope, and also as a monthly retainer, a short discovery sprint, milestone payments, hourly advisory calls or a workshop day rate. Full-time (5 days a week) or part-time (for example 3 days a week or alternate weeks), short-term or long-term, monthly or project-based. We agree the shape on a first call.",
   },
   {
     question: "Do you take permanent roles?",

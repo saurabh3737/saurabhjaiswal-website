@@ -1,38 +1,32 @@
+import { Suspense } from "react";
 import {
-  ArrowRight,
   BriefcaseBusiness,
   Mail,
-  MessagesSquare,
+  MapPin,
   Mic2,
   Network,
 } from "lucide-react";
 
+import ContactForm, {
+  ContactFormFromUrl,
+} from "@/components/contact/ContactForm";
 import { site } from "@/content/site";
 
 const contactReasons = [
   {
     icon: BriefcaseBusiness,
     title: "Consulting & AI",
-    text:
-      "AI strategy, engineering, architecture and practical technology engagements.",
-  },
-  {
-    icon: Mic2,
-    title: "Speaking & Workshops",
-    text:
-      "Conferences, guest sessions, workshops, universities and technology communities.",
+    text: "Freelance AI strategy, architecture and engineering — full-time or part-time, short or long term.",
   },
   {
     icon: Network,
     title: "AIMates",
-    text:
-      "Partnerships, collaborations, community ideas and conversations around AIMates.",
+    text: "Partnerships with universities, companies, tools and communities.",
   },
   {
-    icon: MessagesSquare,
-    title: "Something Interesting",
-    text:
-      "If you're building something meaningful around AI or technology, I'm always open to a good conversation.",
+    icon: Mic2,
+    title: "Speaking & workshops",
+    text: "Conferences, panels, guest sessions and corporate training.",
   },
 ];
 
@@ -57,47 +51,68 @@ export default function ContactHero() {
           </h1>
 
           <p className="contact-lead">
-            Whether it&apos;s AI, technology,
-            consulting, speaking, AIMates or an
-            interesting idea worth exploring —
-            feel free to reach out.
+            Tell me what you have in mind — an AI
+            project, a contract role, an AIMates
+            partnership or an event. I read every
+            message personally.
           </p>
-
-          <a
-            href={`mailto:${site.email}`}
-            className="action-primary contact-email"
-          >
-            <Mail size={18} />
-            Email Me
-            <ArrowRight size={17} />
-          </a>
         </div>
 
-        <div className="contact-grid">
-          {contactReasons.map(
-            ({
-              icon: Icon,
-              title,
-              text,
-            }) => (
-              <article
-                key={title}
-                className="surface-card contact-card"
+        <div className="contact-layout">
+          <Suspense fallback={<ContactForm initialReason="consulting" />}>
+            <ContactFormFromUrl />
+          </Suspense>
+
+          <aside className="contact-aside">
+            <div className="surface-card contact-direct">
+              <h2 className="wwm-card-title">
+                Or reach me directly
+              </h2>
+
+              <a
+                href={`mailto:${site.email}`}
+                className="contact-direct-link"
               >
-                <div className="surface-card-icon">
-                  <Icon size={22} />
-                </div>
+                <Mail size={17} />
+                {site.email}
+              </a>
 
-                <h2 className="surface-card-title contact-card-title">
-                  {title}
-                </h2>
+              <a
+                href={site.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-direct-link"
+              >
+                <BriefcaseBusiness size={17} />
+                LinkedIn
+              </a>
 
-                <p className="surface-card-copy">
-                  {text}
-                </p>
-              </article>
-            ),
-          )}
+              <span className="contact-direct-link">
+                <MapPin size={17} />
+                {site.location.label}
+              </span>
+
+              <p className="page-hero-note contact-availability">
+                <span className="page-hero-dot" />
+                {site.availability}
+              </p>
+            </div>
+
+            <ul className="contact-reason-list">
+              {contactReasons.map(({ icon: Icon, title, text }) => (
+                <li key={title}>
+                  <span className="home-journey-icon">
+                    <Icon size={18} />
+                  </span>
+
+                  <span>
+                    <strong>{title}</strong>
+                    <span>{text}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </div>
     </section>

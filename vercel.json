@@ -72,6 +72,11 @@
       "statusCode": 301
     },
     {
+      "source": "/pythonmates/",
+      "destination": "https://pythonmates.com/",
+      "statusCode": 301
+    },
+    {
       "source": "/pythonmates/:path*",
       "destination": "https://pythonmates.com/:path*",
       "statusCode": 301

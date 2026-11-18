@@ -1,0 +1,546 @@
+/* =========================================
+   HOME — SHARED SECTION LAYOUT
+   ========================================= */
+
+.home-section {
+  padding: 110px 0;
+
+  background: var(--background);
+}
+
+.home-section-alt {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.035),
+      transparent 60%
+    ),
+    var(--background);
+}
+
+.home-section-head {
+  max-width: 760px;
+
+  margin-bottom: 52px;
+}
+
+.home-section-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+.home-card-title {
+  margin: 20px 0 0;
+
+  color: var(--text);
+
+  font-size: 22px;
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 760;
+}
+
+
+/* =========================================
+   CLIENT STRIP
+   ========================================= */
+
+.home-clients {
+  padding: 46px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--background);
+}
+
+.home-clients-label {
+  margin: 0 0 18px;
+
+  color: var(--text-muted);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.09em;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.home-clients-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px 34px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.home-clients-list li {
+  color: var(--text);
+
+  opacity: 0.82;
+
+  font-size: 20px;
+
+  letter-spacing: -0.02em;
+
+  font-weight: 760;
+}
+
+
+/* =========================================
+   SERVICES
+   ========================================= */
+
+.home-services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.home-service-card {
+  padding: 28px 24px;
+}
+
+.home-service-points {
+  margin: 20px 0 0;
+  padding: 18px 0 0;
+
+  border-top: 1px solid var(--border);
+
+  list-style: none;
+}
+
+.home-service-points li {
+  position: relative;
+
+  padding-left: 18px;
+
+  color: var(--text);
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.home-service-points li + li {
+  margin-top: 9px;
+}
+
+.home-service-points li::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+}
+
+
+/* =========================================
+   SELECTED WORK + NUMBERS
+   ========================================= */
+
+.home-work-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.home-work-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px 26px;
+}
+
+.home-work-client {
+  margin-top: 18px;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.home-work-card .home-work-client {
+  margin-top: 0;
+}
+
+.home-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin: auto 0 0;
+  padding: 22px 0 0;
+
+  list-style: none;
+}
+
+.home-tags li {
+  padding: 5px 10px;
+
+  color: var(--text-muted);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.home-numbers {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  margin: 34px 0 0;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background: var(--surface);
+}
+
+.home-numbers > div {
+  padding: 26px 24px;
+
+  border-right: 1px solid var(--border);
+}
+
+.home-numbers > div:last-child {
+  border-right: 0;
+}
+
+.home-numbers dt {
+  color: var(--accent);
+
+  font-size: 30px;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 800;
+}
+
+.home-numbers dd {
+  margin: 8px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   THREE WAYS TO WORK TOGETHER
+   ========================================= */
+
+.home-paths-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.home-path-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 32px 28px;
+}
+
+.home-path-card-primary {
+  border-color: rgba(var(--accent-rgb), 0.55);
+}
+
+.home-path-action {
+  align-self: flex-start;
+
+  margin-top: auto;
+}
+
+.home-path-card .surface-card-copy {
+  margin-bottom: 28px;
+}
+
+
+/* =========================================
+   SPLIT LAYOUT (AIMATES + BOOK)
+   ========================================= */
+
+.home-split {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.home-split-reverse {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.home-split-media {
+  display: flex;
+  justify-content: center;
+}
+
+.home-split-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+
+  border-radius: 22px;
+}
+
+.home-book-image {
+  max-width: 360px;
+
+  border-radius: 0;
+}
+
+.home-book-subtitle {
+  margin: 14px 0 0;
+
+  color: var(--text);
+
+  font-size: 20px;
+  font-weight: 650;
+}
+
+
+/* =========================================
+   VENTURE JOURNEY (ON HOME)
+   ========================================= */
+
+.home-journey {
+  display: grid;
+
+  gap: 12px;
+
+  margin: 34px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.home-journey-step {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 16px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+}
+
+.home-journey-step-flagship {
+  border-color: rgba(var(--accent-rgb), 0.55);
+}
+
+.home-journey-icon {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  color: var(--accent);
+
+  border-radius: 10px;
+
+  background: rgba(var(--accent-rgb), 0.09);
+}
+
+.home-journey-step strong {
+  display: inline;
+
+  color: var(--text);
+
+  font-size: 16px;
+}
+
+.home-journey-step small {
+  margin-left: 10px;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.07em;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.home-journey-step span > span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   CREDENTIALS + TRAINED
+   ========================================= */
+
+.home-credentials {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.home-credentials li {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 18px 20px;
+
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.home-credentials svg {
+  flex: 0 0 auto;
+
+  color: var(--accent);
+}
+
+.home-trained {
+  margin-top: 44px;
+}
+
+.home-trained .home-clients-list li {
+  font-size: 17px;
+}
+
+
+/* =========================================
+   HOME — RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1180px) {
+  .home-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-numbers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-numbers > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .home-numbers > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .home-split {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-section {
+    padding: 80px 0;
+  }
+
+  .home-work-grid,
+  .home-paths-grid,
+  .home-split,
+  .home-split-reverse {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-split-reverse .home-split-media {
+    order: 2;
+  }
+
+  .home-credentials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .home-section {
+    padding: 64px 0;
+  }
+
+  .home-services-grid,
+  .home-credentials,
+  .home-numbers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-numbers > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .home-numbers > div:last-child {
+    border-bottom: 0;
+  }
+
+  .home-clients-list li {
+    font-size: 17px;
+  }
+}

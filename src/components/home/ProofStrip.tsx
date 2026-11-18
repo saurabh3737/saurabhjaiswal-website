@@ -9,7 +9,7 @@ const proofItems = [
   {
     icon: BriefcaseBusiness,
     top: "Freelance",
-    bottom: "AI Consultant & Advisor",
+    bottom: "AI Consultant",
   },
   {
     icon: Building2,

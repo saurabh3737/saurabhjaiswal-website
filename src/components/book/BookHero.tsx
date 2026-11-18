@@ -5,6 +5,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { ctas } from "@/content/site";
+
 export default function BookHero() {
   return (
     <section className="book-hero">
@@ -48,7 +50,7 @@ export default function BookHero() {
             </Link>
 
             <Link
-              href="/contact"
+              href={ctas.speak.href}
               className="action-secondary"
             >
               <Sparkles size={18} />

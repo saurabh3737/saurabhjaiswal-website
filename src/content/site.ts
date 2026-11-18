@@ -18,6 +18,15 @@ export const site = {
 
   availability: "Open to freelance engagements, partnerships and speaking",
 
+  // Put the PDF in public/resume/ and set the path here to show the download buttons.
+  resumeUrl: "",
+
+  book: {
+    // Add store links when the book is on sale, e.g.
+    // { label: "Amazon", href: "https://www.amazon.com/..." }
+    buyLinks: [] as { label: string; href: string }[],
+  },
+
   social: {
     linkedin: "https://www.linkedin.com/in/saurabh-jaiswal-ai/",
     github: "https://github.com/saurabh3737",

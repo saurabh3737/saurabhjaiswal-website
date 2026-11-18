@@ -297,3 +297,50 @@ export const clientNames = [
   "Hewlett-Packard",
   "DRDO",
 ];
+
+// Case-study pages for engagements/roles that have one.
+export const caseStudyFor: Record<string, string> = {
+  amazon: "amazon-robotics-ai-platforms",
+  "kbc-data": "kbc-napp-data-pipelines",
+  ontoforce: "ontoforce-disqover-assistant",
+  "kbc-kate": "kbc-kate-ai-chatbot",
+  jpmorgan: "jpmorgan-almond-risk-platform",
+  rakuten: "rakuten-imageorigin",
+  accenture: "bank-of-america-qztest",
+  mphasis: "hp-server-automation",
+  drdo: "drdo-network-security-ml",
+};
+
+export const beyondWork = [
+  {
+    title: "Volunteering",
+    items: [
+      "Mahita — education for women",
+      "GoodWorks — building houses for the poor",
+      "Skill development — English and soft skills",
+    ],
+  },
+  {
+    title: "Hosting & commentary",
+    items: [
+      "Anchor and host — annual and Christmas events at Accenture",
+      "Cricket commentary — Hitech Premier Cricket League, BofA Premier League",
+      "Cultural events, colleges and organisations",
+    ],
+  },
+  {
+    title: "Sport, music & reading",
+    items: [
+      "Inter-college table tennis champion (ISTE)",
+      "Playing guitar",
+      "Reading books",
+    ],
+  },
+  {
+    title: "Early leadership",
+    items: [
+      "Top 5 all-round personality of M.P. — Global Leader Contest (Scratchmysoul.com)",
+      "Chief coordinator — state-level event NOVIZIO-2K8",
+    ],
+  },
+];

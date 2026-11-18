@@ -5,6 +5,8 @@ import {
   Mic2,
 } from "lucide-react";
 
+import { ctas } from "@/content/site";
+
 export default function SpeakingHero() {
   return (
     <section className="speaking-hero">
@@ -51,7 +53,7 @@ export default function SpeakingHero() {
             </Link>
 
             <Link
-              href="/contact"
+              href={ctas.speak.href}
               className="action-secondary"
             >
               <CalendarDays size={18} />

@@ -1,0 +1,286 @@
+/* =========================================
+   EXPERIENCE — FULL RECORD
+   ========================================= */
+
+.xp-freelance {
+  padding: 30px;
+
+  border: 1px solid rgba(var(--accent-rgb), 0.45);
+  border-radius: 20px;
+
+  background: var(--surface);
+}
+
+.xp-freelance-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+}
+
+.xp-role {
+  display: block;
+
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 20px;
+  line-height: 1.3;
+
+  letter-spacing: -0.02em;
+
+  font-weight: 760;
+}
+
+.xp-org {
+  display: block;
+
+  margin: 4px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+}
+
+.xp-period {
+  flex: 0 0 auto;
+
+  color: var(--accent);
+
+  font-size: 13px;
+  font-weight: 750;
+
+  letter-spacing: 0.02em;
+}
+
+.xp-engagements {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 24px;
+}
+
+.xp-engagement {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 20px;
+}
+
+.xp-engagement-role {
+  margin: 6px 0 0;
+
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.xp-engagement .surface-card-copy {
+  margin-top: 10px;
+
+  font-size: 14px;
+}
+
+.xp-engagement .work-card-link {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.xp-roles {
+  border-top: 1px solid var(--border);
+}
+
+.xp-role-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.xp-role-row summary {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 170px minmax(0, 1fr);
+
+  gap: 20px;
+
+  padding: 22px 40px 22px 0;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.xp-role-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.xp-role-row summary::after {
+  content: "+";
+
+  position: absolute;
+  right: 4px;
+  top: 20px;
+
+  color: var(--accent);
+
+  font-size: 24px;
+}
+
+.xp-role-row[open] summary::after {
+  content: "–";
+}
+
+.xp-role-row summary:hover .xp-role {
+  color: var(--accent);
+}
+
+.xp-role-row .xp-period {
+  padding-top: 4px;
+}
+
+.xp-role-body {
+  padding: 0 0 26px 190px;
+}
+
+.xp-role-body .surface-card-copy {
+  margin-top: 0;
+}
+
+.xp-highlights {
+  margin: 14px 0 0;
+  padding-left: 18px;
+
+  color: var(--text);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.xp-highlights li + li {
+  margin-top: 6px;
+}
+
+.xp-highlights li::marker {
+  color: var(--accent);
+}
+
+
+/* =========================================
+   EXPERIENCE — EDUCATION
+   ========================================= */
+
+.xp-education {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.xp-education-card {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding: 26px 24px;
+}
+
+.xp-education-card .home-card-title {
+  margin-top: 8px;
+}
+
+.xp-education-note {
+  margin: 10px 0 0;
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.xp-certs {
+  margin-top: 30px;
+}
+
+
+/* =========================================
+   ABOUT — BEYOND WORK
+   ========================================= */
+
+.about-beyond-list {
+  margin-top: 14px;
+}
+
+.about-beyond-list li {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   BOOK — BUY LINKS
+   ========================================= */
+
+.book-buy-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 8px;
+}
+
+.book-buy-links a {
+  color: var(--accent);
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   PROFILE — RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1180px) {
+  .xp-engagements {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .xp-education {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .xp-role-row summary {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 6px;
+  }
+
+  .xp-role-body {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .xp-freelance {
+    padding: 22px 18px;
+  }
+
+  .xp-freelance-head {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .xp-engagements {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

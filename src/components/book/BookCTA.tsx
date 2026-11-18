@@ -5,6 +5,8 @@ import {
   Mic2,
 } from "lucide-react";
 
+import { ctas, site } from "@/content/site";
+
 export default function BookCTA() {
   return (
     <section className="book-cta-section">
@@ -41,15 +43,37 @@ export default function BookCTA() {
                     Buying options
                   </strong>
 
-                  <span>
-                    Purchase links will be
-                    available here.
-                  </span>
+                  {site.book.buyLinks.length > 0 ? (
+                    <span className="book-buy-links">
+                      {site.book.buyLinks.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </span>
+                  ) : (
+                    <span>
+                      Launching soon — follow me on{" "}
+                      <a
+                        href={site.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>{" "}
+                      for the release.
+                    </span>
+                  )}
                 </div>
               </div>
 
               <Link
-                href="/speaking"
+                href={ctas.speak.href}
                 className="action-secondary"
               >
                 <Mic2 size={18} />

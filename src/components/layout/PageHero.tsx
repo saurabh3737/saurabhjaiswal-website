@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 
 type Action = {
   label: string;
@@ -14,6 +15,7 @@ type PageHeroProps = {
   primary?: Action;
   secondary?: Action;
   note?: string;
+  aside?: ReactNode;
 };
 
 export default function PageHero({
@@ -24,12 +26,20 @@ export default function PageHero({
   primary,
   secondary,
   note,
+  aside,
 }: PageHeroProps) {
   return (
     <section className="page-hero">
       <div className="page-hero-glow" />
 
-      <div className="site-shell page-hero-inner">
+      <div
+        className={
+          aside
+            ? "site-shell page-hero-inner page-hero-inner--split"
+            : "site-shell page-hero-inner"
+        }
+      >
+        <div className="page-hero-copy">
         <div className="section-eyebrow">
           {eyebrow}
         </div>
@@ -79,6 +89,9 @@ export default function PageHero({
             {note}
           </p>
         ) : null}
+        </div>
+
+        {aside}
       </div>
     </section>
   );

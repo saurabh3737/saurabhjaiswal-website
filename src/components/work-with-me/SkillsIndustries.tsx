@@ -55,60 +55,36 @@ export default function SkillsIndustries() {
           ))}
         </div>
 
-        <div className="wwm-columns">
-          <div>
-            <h3 className="wwm-subhead">
-              Industries
-            </h3>
+        <div className="wwm-profile-grid">
+          {[
+            { title: "Industries", items: industries },
+            { title: "Roles I take on", items: rolesOffered },
+            { title: "Certifications", items: certifications },
+          ].map((group) => (
+            <div key={group.title}>
+              <h3 className="wwm-subhead">{group.title}</h3>
 
-            <ul className="wwm-check-list">
-              {industries.map((item) => (
-                <li key={item}>
-                  <CheckCircle2 size={17} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="wwm-subhead">
-              Roles I take on
-            </h3>
-
-            <ul className="wwm-check-list">
-              {rolesOffered.map((item) => (
-                <li key={item}>
-                  <CheckCircle2 size={17} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul className="wwm-check-list">
+                {group.items.map((item) => (
+                  <li key={item}>
+                    <CheckCircle2 size={17} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div>
-            <h3 className="wwm-subhead">
-              Certifications
-            </h3>
+            <h3 className="wwm-subhead">Languages</h3>
 
-            <ul className="wwm-check-list">
-              {certifications.map((item) => (
-                <li key={item}>
-                  <CheckCircle2 size={17} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="wwm-subhead">
-              Languages
-            </h3>
-
-            <ul className="wwm-plain-list">
+            <ul className="wwm-check-list wwm-lang-list">
               {languages.map((item) => (
                 <li key={item.name}>
-                  <strong>{item.name}</strong>
-                  <span>{item.level}</span>
+                  <CheckCircle2 size={17} />
+                  <span>
+                    {item.name} <em>{item.level}</em>
+                  </span>
                 </li>
               ))}
             </ul>

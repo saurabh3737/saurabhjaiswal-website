@@ -1,0 +1,24 @@
+/* =========================================
+   INNER PAGE HEROES — BIG SCREENS
+   On monitors 1600px+ every page hero fills the first screen
+   (window height minus the 79px header) with its content centred,
+   so the next section starts below the fold, like on a laptop.
+   ========================================= */
+
+@media (min-width: 1600px) {
+  .page-hero,
+  .experience-hero,
+  .aimates-hero,
+  .book-hero,
+  .speaking-hero,
+  .about-hero {
+    min-height: calc(100vh - 79px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}

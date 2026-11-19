@@ -4,6 +4,7 @@ import PageHero from "@/components/layout/PageHero";
 import EngagementModels from "@/components/work-with-me/EngagementModels";
 import FaqSection from "@/components/work-with-me/FaqSection";
 import SkillsIndustries from "@/components/work-with-me/SkillsIndustries";
+import WorkWithMePanel from "@/components/work-with-me/WorkWithMePanel";
 import { ctas, site } from "@/content/site";
 import { faqs } from "@/content/services";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
@@ -39,6 +40,7 @@ export default function WorkWithMePage() {
           href: "/work/",
         }}
         note={`${site.availability} · ${site.location.label}`}
+        aside={<WorkWithMePanel />}
       />
 
       <Services />

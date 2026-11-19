@@ -5,9 +5,7 @@
 .contact-section {
   position: relative;
 
-  min-height: calc(100vh - 80px);
-
-  padding: 82px 0 100px;
+  padding: 56px 0 84px;
 
   overflow: hidden;
 
@@ -42,9 +40,9 @@
 
   font-size:
     clamp(
-      52px,
-      5vw,
-      76px
+      46px,
+      4.4vw,
+      66px
     );
 
   line-height: 0.98;
@@ -61,7 +59,7 @@
 .contact-lead {
   max-width: 680px;
 
-  margin: 28px 0 0;
+  margin: 20px 0 0;
 
   color: var(--text-muted);
 
@@ -159,7 +157,7 @@
 
   align-items: start;
 
-  margin-top: 54px;
+  margin-top: 36px;
 }
 
 .contact-form {

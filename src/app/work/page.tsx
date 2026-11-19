@@ -1,6 +1,7 @@
 import ContactCTA from "@/components/home/ContactCTA";
 import PageHero from "@/components/layout/PageHero";
 import CaseStudyGrid from "@/components/work/CaseStudyGrid";
+import ClientsPanel from "@/components/work/ClientsPanel";
 import { freelance } from "@/content/career";
 import { otherEngagements } from "@/content/projects";
 import { ctas } from "@/content/site";
@@ -29,6 +30,7 @@ export default function WorkPage() {
           label: "Full experience",
           href: "/experience/",
         }}
+        aside={<ClientsPanel />}
       />
 
       <section className="home-section">

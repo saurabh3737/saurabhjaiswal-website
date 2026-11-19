@@ -12,10 +12,14 @@ import {
 
 import "./globals.css";
 
+// Home-page title for Google: name first, then the two things that set this
+// Saurabh Jaiswal apart from others with the same name. ~70 characters.
+const homeTitle = `${site.name} | AI Consultant & Strategist, Author of AI for Real Work`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | ${site.role} — AI, Python, AWS & Azure`,
+    default: homeTitle,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -36,13 +40,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: site.name,
-    title: `${site.name} | ${site.role}`,
+    title: homeTitle,
     description: site.description,
     images: [{ url: site.images.hero }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | ${site.role}`,
+    title: homeTitle,
     description: site.description,
     images: [site.images.hero],
   },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import AskWidget from "@/components/ai/AskWidget";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
@@ -80,6 +81,7 @@ export default function RootLayout({
           <Header />
           <div id="main-content">{children}</div>
           <Footer />
+          <AskWidget />
         </ThemeProvider>
       </body>
     </html>

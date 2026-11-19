@@ -153,6 +153,7 @@ export const footerColumns = [
       { label: "My ventures journey", href: "/aimates/#venture-journey" },
       { label: "Partner with AIMates", href: contactHref("aimates") },
       { label: "About me", href: "/about/" },
+      { label: "Ask Saurabh AI", href: "/ask/" },
     ],
   },
 ] as const;

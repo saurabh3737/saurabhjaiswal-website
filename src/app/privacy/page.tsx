@@ -43,6 +43,17 @@ export default function PrivacyPage() {
           and I do not share it with anyone.
         </p>
 
+        <h2>Ask Saurabh AI</h2>
+        <p>
+          The &ldquo;Ask Saurabh AI&rdquo; assistant sends the
+          questions you type, together with public content from
+          this website, to Google&apos;s Gemini API to generate an
+          answer. The website does not store your conversation,
+          and it disappears when you close or reload the page.
+          Please don&apos;t enter personal or confidential
+          information in the chat.
+        </p>
+
         <h2>Hosting</h2>
         <p>
           The site is hosted on Vercel. Like any web host, it

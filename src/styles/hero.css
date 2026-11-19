@@ -421,36 +421,12 @@ html[data-theme="executive-light"]
     flex-direction: column;
   }
 
-/* =========================================
-   HERO PHOTOGRAPHIC COMPOSITION
-   ========================================= */
+  .hero-composition-image {
+    object-fit: contain;
 
-.hero-media {
-  position: relative;
+    object-position: right bottom;
+  }
 
-  min-height: 800px;
-
-  overflow: visible;
-
-  z-index: 1;
-}
-
-.hero-composition {
-  position: absolute;
-
-  top: 6px;
-  right: -110px;
-  bottom: 0;
-  left: -85px;
-
-  overflow: hidden;
-}
-
-.hero-composition-image {
-  object-fit: contain;
-
-  object-position: right bottom;
-}
   /*
    * On tablet the blend moves downward
    * instead of sideways.
@@ -606,12 +582,29 @@ html[data-theme="executive-light"]
 }
 
 /* =========================================
-   HERO HEIGHT
-   Fills the first screen (window height minus the 79px header),
-   is never shorter than the photo (1537 x 1023) and never taller than 860px.
+   HERO HEIGHT + BIG SCREENS
+   Photo is 1537 x 1023 (ratio 1.5024).
+   Laptops (901-1599px): hero fills the first screen, never shorter
+   than the photo, never taller than 860px.
+   Big monitors (1600px+): photo runs to the window edge and the hero
+   is as tall as its text block, so it looks like the laptop layout.
    ========================================= */
 
-@media (min-width: 1181px) {
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hero-section,
+  .hero-grid,
+  .hero-media {
+    min-height: min(
+      max(
+        calc(44px + ((100vw - 44px) * 0.479 + 30px) / 1.5024),
+        calc(100vh - 79px)
+      ),
+      860px
+    );
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1599px) {
   .hero-section,
   .hero-grid,
   .hero-media {
@@ -625,16 +618,99 @@ html[data-theme="executive-light"]
   }
 }
 
-@media (min-width: 901px) and (max-width: 1180px) {
+@media (min-width: 1600px) {
+  /*
+   * Scale everything in proportion to the window height, using a
+   * MacBook-sized window (820px tall) as the reference, up to 1.5x.
+   */
+  .hero-section {
+    --hs: min(100vh, 1230px);
+  }
+
   .hero-section,
   .hero-grid,
   .hero-media {
-    min-height: min(
-      max(
-        calc(44px + ((100vw - 44px) * 0.479 + 30px) / 1.5024),
-        calc(100vh - 79px)
-      ),
-      860px
+    min-height: calc(100vh - 79px);
+  }
+
+  .hero-content {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: calc(var(--hs) * 24 / 820) 0;
+  }
+
+  .hero-eyebrow {
+    font-size: calc(var(--hs) * 12 / 820);
+  }
+
+  .hero-title {
+    max-width: calc(var(--hs) * 620 / 820);
+
+    margin-top: calc(var(--hs) * 18 / 820);
+
+    font-size: calc(var(--hs) * 62 / 820);
+  }
+
+  .hero-accent-line {
+    width: calc(var(--hs) * 68 / 820);
+
+    margin-top: calc(var(--hs) * 24 / 820);
+  }
+
+  .hero-description {
+    max-width: calc(var(--hs) * 570 / 820);
+
+    margin-top: calc(var(--hs) * 20 / 820);
+
+    font-size: calc(var(--hs) * 16 / 820);
+  }
+
+  .hero-actions {
+    margin-top: calc(var(--hs) * 26 / 820);
+  }
+
+  .primary-cta,
+  .secondary-cta {
+    min-height: calc(var(--hs) * 50 / 820);
+
+    padding: 0 calc(var(--hs) * 20 / 820);
+
+    font-size: calc(var(--hs) * 15 / 820);
+  }
+
+  .proof-strip {
+    width: min(
+      calc(var(--hs) * 980 / 820),
+      calc(100% + 300px)
     );
+
+    margin-top: calc(var(--hs) * 8 / 820);
+  }
+
+  .proof-item {
+    min-height: calc(var(--hs) * 88 / 820);
+  }
+
+  .proof-icon svg {
+    width: calc(var(--hs) * 22 / 820);
+    height: calc(var(--hs) * 22 / 820);
+  }
+
+  .proof-top,
+  .proof-bottom {
+    font-size: calc(var(--hs) * 12 / 820);
+  }
+
+  .hero-composition {
+    right: calc((100vw - min(100vw - 140px, 1480px)) / -2);
+  }
+
+  .hero-composition-image {
+    object-fit: cover;
+    object-position: right center;
   }
 }

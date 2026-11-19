@@ -6,7 +6,9 @@ import {
   caseStudies,
   getCaseStudy,
 } from "@/content/projects";
+import { getDiagram } from "@/content/diagrams";
 import { ctas } from "@/content/site";
+import FlowDiagram from "@/components/work/FlowDiagram";
 import {
   breadcrumbJsonLd,
   caseStudyJsonLd,
@@ -48,6 +50,7 @@ export default async function CaseStudyPage({ params }: Props) {
     notFound();
   }
 
+  const diagram = getDiagram(study.slug);
   const index = caseStudies.findIndex((item) => item.slug === study.slug);
   const next = caseStudies[(index + 1) % caseStudies.length];
 
@@ -96,6 +99,15 @@ export default async function CaseStudyPage({ params }: Props) {
           <p className="case-meta">{study.meta}</p>
         </div>
       </section>
+
+      {diagram ? (
+        <section className="home-section case-diagram-section">
+          <div className="site-shell">
+            <div className="section-eyebrow">How it fits together</div>
+            <FlowDiagram diagram={diagram} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="home-section">
         <div className="site-shell case-layout">

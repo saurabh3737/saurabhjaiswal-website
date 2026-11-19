@@ -5,6 +5,7 @@ import {
   BookOpenText,
 } from "lucide-react";
 
+import SocialLinks from "@/components/layout/SocialLinks";
 import { site } from "@/content/site";
 
 export default function AboutHero() {
@@ -44,10 +45,10 @@ export default function AboutHero() {
 
           <div className="about-hero-actions">
             <Link
-              href="/experience"
+              href="/experience/"
               className="action-primary"
             >
-              My Journey
+              Career & experience
               <ArrowRight size={17} />
             </Link>
 
@@ -58,6 +59,10 @@ export default function AboutHero() {
               <BookOpenText size={18} />
               AI for Real Work
             </Link>
+          </div>
+
+          <div className="about-hero-social">
+            <SocialLinks compact withCv />
           </div>
         </div>
 
@@ -87,14 +92,6 @@ export default function AboutHero() {
             Make it useful.”
           </blockquote>
 
-          <div className="about-statement-line" />
-
-          <p>
-            Research taught me to question.
-            Engineering taught me to build.
-            Enterprise taught me to scale.
-            AI brought those worlds together.
-          </p>
         </div>
         </div>
       </div>

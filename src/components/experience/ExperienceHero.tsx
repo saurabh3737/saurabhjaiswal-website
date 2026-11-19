@@ -1,11 +1,13 @@
-import Link from "next/link";
 import {
   ArrowDown,
   BrainCircuit,
+  FileDown,
   Building2,
   FlaskConical,
   Sparkles,
 } from "lucide-react";
+
+import { site } from "@/content/site";
 
 const journeySignals = [
   {
@@ -70,12 +72,15 @@ export default function ExperienceHero() {
               Explore the Journey
             </a>
 
-            <Link
-              href="/aimates"
+            <a
+              href={site.resumeUrl}
+              target="_blank"
+              rel="noopener"
               className="experience-secondary-action"
             >
-              Discover AIMates
-            </Link>
+              <FileDown size={18} />
+              Download CV (PDF)
+            </a>
           </div>
         </div>
 

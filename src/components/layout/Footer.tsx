@@ -1,18 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 
+import SocialLinks from "@/components/layout/SocialLinks";
 import {
   ctas,
   footerColumns,
   site,
 } from "@/content/site";
 
-const socialLinks = [
-  { label: "LinkedIn", href: site.social.linkedin },
-  { label: "GitHub", href: site.social.github },
-  { label: "X / Twitter", href: site.social.x },
-  { label: "Python.org", href: site.social.python },
-];
 
 const year = new Date().getFullYear();
 
@@ -68,6 +63,8 @@ export default function Footer() {
               <MapPin size={16} />
               {site.location.label}
             </div>
+
+            <SocialLinks compact withCv />
           </div>
 
           {footerColumns.map((column) => (
@@ -103,19 +100,6 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="footer-social">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

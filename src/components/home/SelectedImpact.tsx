@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import FlowDiagram from "@/components/work/FlowDiagram";
+import { getDiagram } from "@/content/diagrams";
 import { featuredWork } from "@/content/services";
 
 const proofNumbers = [
@@ -37,6 +39,12 @@ export default function SelectedImpact() {
               href={`/work/${work.slug}/`}
               className="surface-card home-work-card work-card"
             >
+              {getDiagram(work.slug) ? (
+                <div className="work-card-visual">
+                  <FlowDiagram diagram={getDiagram(work.slug)} compact />
+                </div>
+              ) : null}
+
               <div className="home-work-client">
                 {work.client}
               </div>

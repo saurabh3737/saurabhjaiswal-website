@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -5,7 +6,7 @@ import {
   Mic2,
 } from "lucide-react";
 
-import { ctas } from "@/content/site";
+import { ctas, site } from "@/content/site";
 
 export default function SpeakingHero() {
   return (
@@ -62,36 +63,22 @@ export default function SpeakingHero() {
           </div>
         </div>
 
-        <div className="speaking-hero-panel surface-card">
-          <div className="speaking-panel-label">
-            SPEAKING FOCUS
-          </div>
+        <div className="speaking-hero-side">
+          <figure className="photo-card speaking-photo">
+            <Image
+              src={site.images.speakingTsair}
+              alt={`${site.name} speaking at TSAIR 2026 in Paris`}
+              width={1000}
+              height={1250}
+              priority
+              sizes="(max-width: 900px) 90vw, 400px"
+            />
+          </figure>
 
-          <div className="speaking-panel-list">
-            <div className="speaking-panel-item">
-              <span>01</span>
-              <strong>AI Strategy</strong>
-            </div>
-
-            <div className="speaking-panel-item">
-              <span>02</span>
-              <strong>AI Architecture</strong>
-            </div>
-
-            <div className="speaking-panel-item">
-              <span>03</span>
-              <strong>AI for Real Work</strong>
-            </div>
-
-            <div className="speaking-panel-item">
-              <span>04</span>
-              <strong>Engineering & Cloud</strong>
-            </div>
-
-            <div className="speaking-panel-item">
-              <span>05</span>
-              <strong>Careers in the AI Era</strong>
-            </div>
+          <div className="photo-caption-card">
+            <span>On stage</span>
+            <strong>TSAIR 2026 · Paris</strong>
+            <p>Practical AI, clear thinking and real-world examples.</p>
           </div>
         </div>
       </div>

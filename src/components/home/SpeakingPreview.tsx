@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-import { ctas } from "@/content/site";
+import { ctas, site } from "@/content/site";
 import {
   credentials,
   trainingClients,
@@ -13,7 +14,19 @@ export default function SpeakingPreview() {
       id="credentials"
       className="home-section home-section-alt"
     >
-      <div className="site-shell">
+      <div className="site-shell home-speaking-grid">
+        <figure className="photo-card home-speaking-photo">
+          <Image
+            src={site.images.speakingTsair}
+            alt={`${site.name} speaking at TSAIR 2026 in Paris`}
+            width={1000}
+            height={1250}
+            sizes="(max-width: 900px) 90vw, 360px"
+          />
+          <figcaption>TSAIR 2026 · Paris</figcaption>
+        </figure>
+
+        <div>
         <div className="home-section-head">
           <div className="section-eyebrow">
             Speaking, training & credentials
@@ -70,6 +83,7 @@ export default function SpeakingPreview() {
           >
             Talks and topics
           </Link>
+        </div>
         </div>
       </div>
     </section>

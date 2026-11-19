@@ -1,3 +1,4 @@
+import ExperienceGlance from "@/components/experience/ExperienceGlance";
 import ExperienceHero from "@/components/experience/ExperienceHero";
 import ExperienceTimeline from "@/components/experience/ExperienceTimeline";
 import ExperienceImpact from "@/components/experience/ExperienceImpact";
@@ -17,6 +18,7 @@ export default function ExperiencePage() {
   return (
     <main>
       <ExperienceHero />
+      <ExperienceGlance />
       <ExperienceTimeline />
       <ExperienceRecord />
       <ExperienceImpact />

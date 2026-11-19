@@ -600,3 +600,16 @@
     padding: 22px;
   }
 }
+.ventures-journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.ventures-journey-link:hover {
+  text-decoration: underline;
+}

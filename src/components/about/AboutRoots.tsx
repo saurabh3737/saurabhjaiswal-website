@@ -18,9 +18,9 @@ export default function AboutRoots() {
           </h2>
 
           <p className="section-intro">
-            {personal.roots} My career has taken me through some of
-            India&apos;s biggest tech cities and Singapore, and today I live
-            and work in Belgium — with clients across Europe and worldwide.
+            {personal.roots} Research and engineering took me through
+            India&apos;s biggest tech cities and Singapore. Today I live and
+            work in Belgium, with clients across Europe and worldwide.
           </p>
 
           <div className="surface-card about-motto">
@@ -37,7 +37,7 @@ export default function AboutRoots() {
         <ol className="about-journey">
           {personal.journey.map((stop, index) => (
             <li
-              key={stop.city}
+              key={`${stop.city}-${index}`}
               className={
                 index === personal.journey.length - 1
                   ? "about-journey-stop about-journey-stop--now"
@@ -49,7 +49,9 @@ export default function AboutRoots() {
               </span>
 
               <div>
-                <strong>{stop.city}</strong>
+                <strong>
+                  {stop.city} <em>{stop.region}</em>
+                </strong>
                 <span>{stop.note}</span>
               </div>
             </li>

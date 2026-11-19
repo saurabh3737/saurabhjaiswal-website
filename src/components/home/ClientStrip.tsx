@@ -1,4 +1,5 @@
-import { clientNames } from "@/content/career";
+import ClientLogo from "@/components/home/ClientLogo";
+import { clients } from "@/content/career";
 
 export default function ClientStrip() {
   return (
@@ -11,9 +12,13 @@ export default function ClientStrip() {
           15+ years building with and for
         </p>
 
-        <ul className="home-clients-list">
-          {clientNames.map((name) => (
-            <li key={name}>{name}</li>
+        <ul className="client-tiles">
+          {clients.map((client) => (
+            <li key={client.name} className="client-tile">
+              <ClientLogo name={client.name} mark={client.mark} logo={client.logo} />
+              <strong>{client.name}</strong>
+              <span className="client-sector">{client.sector}</span>
+            </li>
           ))}
         </ul>
       </div>

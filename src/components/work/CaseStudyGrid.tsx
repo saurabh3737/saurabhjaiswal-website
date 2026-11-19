@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
+import FlowDiagram from "@/components/work/FlowDiagram";
+import { getDiagram } from "@/content/diagrams";
 import {
   areas,
   caseStudies,
@@ -53,6 +55,12 @@ export default function CaseStudyGrid() {
             href={`/work/${study.slug}/`}
             className="surface-card home-work-card work-card"
           >
+            {getDiagram(study.slug) ? (
+              <div className="work-card-visual">
+                <FlowDiagram diagram={getDiagram(study.slug)} compact />
+              </div>
+            ) : null}
+
             <div className="work-card-top">
               <span className="home-work-client">
                 {study.client}

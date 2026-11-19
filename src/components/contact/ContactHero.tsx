@@ -7,6 +7,7 @@ import {
   Network,
 } from "lucide-react";
 
+import SocialLinks from "@/components/layout/SocialLinks";
 import ContactForm, {
   ContactFormFromUrl,
 } from "@/components/contact/ContactForm";
@@ -77,20 +78,12 @@ export default function ContactHero() {
                 {site.email}
               </a>
 
-              <a
-                href={site.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-direct-link"
-              >
-                <BriefcaseBusiness size={17} />
-                LinkedIn
-              </a>
-
               <span className="contact-direct-link">
                 <MapPin size={17} />
                 {site.location.label}
               </span>
+
+              <SocialLinks compact withCv />
 
               <p className="page-hero-note contact-availability">
                 <span className="page-hero-dot" />

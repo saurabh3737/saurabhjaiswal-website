@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, FileDown } from "lucide-react";
 
 import MobileMenu from "@/components/layout/MobileMenu";
 import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
@@ -34,6 +34,17 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          <a
+            href={site.resumeUrl}
+            target="_blank"
+            rel="noopener"
+            className="header-cv"
+            title="Download CV (PDF)"
+          >
+            <FileDown size={17} />
+            <span>CV</span>
+          </a>
+
           <ThemeSwitcher />
 
           <Link

@@ -93,7 +93,7 @@ export function buildKnowledge() {
 
     "## Personal",
     personal.roots,
-    `Places along the way: ${personal.journey.map((j) => `${j.city} (${j.note})`).join(" → ")}.`,
+    `Places along the way: ${personal.journey.map((j) => `${j.city} (${j.region}: ${j.note})`).join(" → ")}.`,
     `Motto: "${personal.motto}" ${personal.identity}`,
     ...beyondWork.map((g) => `- ${g.title}: ${g.items.join("; ")}`),
 

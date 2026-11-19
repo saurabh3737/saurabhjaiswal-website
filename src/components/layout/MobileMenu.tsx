@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarDays, Menu, X } from "lucide-react";
+import { CalendarDays, FileDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { ctas, navItems } from "@/content/site";
+import { ctas, navItems, site } from "@/content/site";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -65,6 +65,17 @@ export default function MobileMenu() {
             <CalendarDays size={18} />
             {ctas.bookCall.longLabel}
           </Link>
+
+          <a
+            href={site.resumeUrl}
+            target="_blank"
+            rel="noopener"
+            className="action-secondary mobile-menu-cta"
+            onClick={() => setOpen(false)}
+          >
+            <FileDown size={18} />
+            Download CV (PDF)
+          </a>
         </nav>
       ) : null}
     </div>

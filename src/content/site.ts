@@ -61,6 +61,8 @@ export const site = {
     portrait: "/images/about/saurabh-jaiswal-portrait.jpg",
     bookCover: "/images/book/ai-for-real-work-3d_old2.png",
     aimatesMug: "/images/brand/aimates-mug.png",
+    speakingTsair: "/images/speaking/tsair-paris-2026.jpg",
+    guitar: "/images/about/saurabh-guitar.jpg",
   },
 } as const;
 
@@ -120,6 +122,7 @@ export const ctas = {
 export const navItems = [
   { label: "Work With Me", href: "/work-with-me/" },
   { label: "Case Studies", href: "/work/" },
+  { label: "Experience", href: "/experience/" },
   { label: "Speaking", href: "/speaking/" },
   { label: "AIMates", href: "/aimates/" },
   { label: "Book", href: "/book/" },

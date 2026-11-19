@@ -194,3 +194,309 @@
     font-size: 14px;
   }
 }
+/* =========================================
+   PHOTO CARDS (patch 12)
+   ========================================= */
+
+.photo-card {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  right: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(4, 9, 15, 0.72);
+  backdrop-filter: blur(8px);
+  color: #f7f8fa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.photo-caption-card {
+  position: relative;
+  margin: -56px 18px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(var(--accent-rgb), 0.08), transparent 46%),
+    var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.photo-caption-card span {
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-caption-card strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.photo-caption-card p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Speaking hero */
+.speaking-hero-side {
+  justify-self: end;
+  width: min(100%, 400px);
+}
+
+.speaking-photo {
+  aspect-ratio: 4 / 5;
+  max-height: 500px;
+}
+
+.speaking-photo img {
+  object-position: center 30%;
+}
+
+/* Home speaking preview */
+.home-speaking-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.home-speaking-photo {
+  aspect-ratio: 4 / 5;
+}
+
+/* About — beyond work */
+.about-beyond-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.about-beyond-photo {
+  aspect-ratio: 16 / 9;
+  max-width: 720px;
+}
+
+.about-beyond-photo img {
+  object-position: 45% 40%;
+}
+
+.about-beyond-copy span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-beyond-copy p {
+  margin: 12px 0 0;
+  color: var(--text);
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+}
+
+.about-beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-beyond-grid .home-service-card {
+  padding: 22px;
+}
+
+@media (max-width: 1100px) {
+  .about-beyond-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .speaking-hero-side {
+    justify-self: start;
+    width: min(100%, 380px);
+  }
+
+  .home-speaking-grid,
+  .about-beyond-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .home-speaking-photo {
+    max-width: 340px;
+  }
+
+}
+
+@media (max-width: 620px) {
+  .about-beyond-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================
+   SOCIAL BUTTONS + CLIENT LOGOS (patch 14)
+   ========================================= */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.social-links--compact {
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.social-links--compact .social-btn {
+  padding: 7px 13px;
+  font-size: 13px;
+}
+
+.social-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.12);
+}
+
+.social-btn--linkedin { background: #0a66c2; }
+.social-btn--github { background: #24292f; border: 1px solid rgba(255, 255, 255, 0.18); }
+.social-btn--x { background: #000; border: 1px solid rgba(255, 255, 255, 0.22); }
+.social-logo {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
+.social-links--compact .social-logo {
+  height: 18px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.about-hero-social .social-links {
+  margin-top: 22px;
+}
+
+/* official client logos sit on a light plate so every brand reads well */
+.client-logo {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 150px;
+  height: 58px;
+  margin-bottom: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* keep the footer's last line clear of the floating "Ask Saurabh AI" button */
+@media (min-width: 641px) {
+  .footer-bottom {
+    padding-right: 230px;
+  }
+}
+
+/* =========================================
+   CV / RESUME BUTTONS (patch 15)
+   ========================================= */
+
+.social-btn--cv {
+  gap: 6px;
+  background: var(--accent);
+  color: #111;
+}
+
+.header-cv {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.header-cv:hover {
+  background: rgba(var(--accent-rgb), 0.16);
+}
+
+.mobile-menu-cta + .mobile-menu-cta {
+  margin-top: 10px;
+}
+
+@media (max-width: 1400px) {
+  .header-cv span {
+    display: none;
+  }
+
+  .header-cv {
+    width: 44px;
+    justify-content: center;
+    padding: 0;
+  }
+}

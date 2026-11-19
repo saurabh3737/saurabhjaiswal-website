@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowUpRight,
   BookOpenText,
   Code2,
   Sparkles,
@@ -15,18 +16,24 @@ const journey = [
     name: "Pythonmates",
     phase: "Learn & teach",
     text: "Where it started — making Python easier to learn.",
+    href: site.ventures.pythonmates,
+    domain: "pythonmates.com",
   },
   {
     icon: BookOpenText,
     name: "Blogmates",
     phase: "Write & publish",
     text: "A home for writing, ideas and knowledge-sharing.",
+    href: site.ventures.blog,
+    domain: "blog.saurabhjaiswal.com",
   },
   {
     icon: Sparkles,
     name: "AIMates",
     phase: "Build an ecosystem",
     text: "Learning, building, people and opportunities around practical AI.",
+    href: site.ventures.aimates,
+    domain: "aimates.org",
     flagship: true,
   },
 ];
@@ -71,15 +78,25 @@ export default function AIMatesFeature() {
                       : "home-journey-step"
                   }
                 >
-                  <span className="home-journey-icon">
-                    <Icon size={18} />
-                  </span>
+                  <a
+                    href={step.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="home-journey-link"
+                  >
+                    <span className="home-journey-icon">
+                      <Icon size={18} />
+                    </span>
 
-                  <span>
-                    <strong>{step.name}</strong>
-                    <small>{step.phase}</small>
-                    <span>{step.text}</span>
-                  </span>
+                    <span>
+                      <strong>{step.name}</strong>
+                      <small>{step.phase}</small>
+                      <span>{step.text}</span>
+                      <em>
+                        {step.domain} <ArrowUpRight size={13} />
+                      </em>
+                    </span>
+                  </a>
                 </li>
               );
             })}

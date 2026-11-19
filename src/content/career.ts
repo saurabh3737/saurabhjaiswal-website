@@ -291,19 +291,30 @@ export const languages = [
   { name: "Marathi", level: "Intermediate" },
 ];
 
-export const clientNames = [
-  "Amazon",
-  "KBC Bank",
-  "ING Bank",
-  "JPMorgan Chase",
-  "Ontoforce",
-  "IMEC",
-  "Rakuten",
-  "Accenture",
-  "Bank of America",
-  "Hewlett-Packard",
-  "DRDO",
+// Client tiles on the home page. Each tile shows the official logo from
+// public/images/clients/<file> when that file exists, otherwise the monogram.
+// Use .png instead of .svg? Change the extension here.
+export const clients: {
+  name: string;
+  mark: string;
+  sector: string;
+  logo?: string;
+}[] = [
+  { name: "Amazon", mark: "A", sector: "Robotics & cloud", logo: "/images/clients/amazon.svg" },
+  { name: "KBC Bank", mark: "KBC", sector: "Banking", logo: "/images/clients/kbc.svg" },
+  { name: "ING Bank", mark: "ING", sector: "Banking", logo: "/images/clients/ing.svg" },
+  { name: "JPMorgan Chase", mark: "JPM", sector: "Banking", logo: "/images/clients/jpmorgan.svg" },
+  { name: "Ontoforce", mark: "O", sector: "Life sciences", logo: "/images/clients/ontoforce.svg" },
+  { name: "IMEC", mark: "imec", sector: "Semiconductor R&D", logo: "/images/clients/imec.svg" },
+  { name: "Lopos", mark: "L", sector: "Edge AI & IoT", logo: "/images/clients/lopos.svg" },
+  { name: "Rakuten", mark: "R", sector: "E-commerce & media", logo: "/images/clients/rakuten.svg" },
+  { name: "Accenture", mark: "Acc", sector: "Consulting", logo: "/images/clients/accenture.svg" },
+  { name: "Bank of America", mark: "BofA", sector: "Banking", logo: "/images/clients/bank-of-america.svg" },
+  { name: "Hewlett-Packard", mark: "HP", sector: "Technology", logo: "/images/clients/hp.svg" },
+  { name: "DRDO", mark: "DRDO", sector: "Defence research", logo: "/images/clients/drdo.svg" },
 ];
+
+export const clientNames = clients.map((client) => client.name);
 
 // Case-study pages for engagements/roles that have one.
 export const caseStudyFor: Record<string, string> = {
@@ -360,18 +371,21 @@ export const beyondWork = [
   },
 ];
 
-// Personal story — from the About-me page on the blog (no date of birth on purpose).
+// Personal story — from Saurabh (no date of birth on purpose).
 export const personal = {
-  roots: "Born in Kanpur and raised in Bhopal, the City of Lakes.",
+  roots:
+    "Family roots in Jaipur, Rajasthan. Born in Kanpur, raised in Bhopal — the City of Lakes.",
   journey: [
-    { city: "Kanpur", note: "Born" },
-    { city: "Bhopal", note: "Grew up · B.E. Computer Science" },
-    { city: "Pune", note: "DRDO research · M.Tech." },
-    { city: "Ahmedabad", note: "Engineering" },
-    { city: "Bangalore", note: "HP · Rakuten · JPMorgan Chase" },
-    { city: "Hyderabad", note: "Accenture · Bank of America" },
-    { city: "Singapore", note: "Rakuten Viki" },
-    { city: "Brussels", note: "Freelance AI consulting · AIMates" },
+    { city: "Jaipur", region: "Rajasthan", note: "Family roots" },
+    { city: "Kanpur", region: "Uttar Pradesh", note: "Born" },
+    { city: "Bhopal", region: "Madhya Pradesh", note: "Grew up · B.E. Computer Science" },
+    { city: "Pune", region: "Maharashtra", note: "DRDO research · M.Tech. at DIAT · first jobs" },
+    { city: "Ahmedabad", region: "2 years", note: "Software engineering" },
+    { city: "Bangalore", region: "2 years", note: "Hewlett-Packard (via Mphasis)" },
+    { city: "Hyderabad", region: "2 years", note: "Accenture · Bank of America" },
+    { city: "Singapore", region: "Onsite", note: "Rakuten Viki" },
+    { city: "Bangalore", region: "4 years", note: "JPMorgan Chase — AVP" },
+    { city: "Belgium", region: "Since 2022", note: "Freelance AI consulting · AIMates" },
   ],
   motto: "Learn, Share, and Help.",
   identity:

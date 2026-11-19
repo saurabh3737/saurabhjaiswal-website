@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { Award, CheckCircle2 } from "lucide-react";
 
 import {
   achievements,
   beyondWork,
 } from "@/content/career";
+import { site } from "@/content/site";
 
 export default function AboutBeyond() {
   return (
@@ -55,7 +57,28 @@ export default function AboutBeyond() {
             </h2>
           </div>
 
-          <div className="home-services-grid">
+          <div className="about-beyond-intro">
+            <figure className="photo-card about-beyond-photo">
+              <Image
+                src={site.images.guitar}
+                alt={`${site.name} playing the guitar`}
+                width={1170}
+                height={648}
+                sizes="(max-width: 900px) 90vw, 700px"
+              />
+            </figure>
+
+            <div className="about-beyond-copy">
+              <span>Off the clock</span>
+              <p>
+                Guitar and melodic music, table tennis, good food and long
+                conversations — the things that keep me curious beyond the
+                keyboard.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-beyond-grid">
             {beyondWork.map((group) => (
               <article
                 key={group.title}

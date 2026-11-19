@@ -1,8 +1,11 @@
 import {
+  ArrowUpRight,
   BookOpenText,
   Code2,
   Sparkles,
 } from "lucide-react";
+
+import { site } from "@/content/site";
 
 const ventures = [
   {
@@ -12,6 +15,8 @@ const ventures = [
     phase: "Learn & Teach",
     text:
       "Pythonmates grew from my interest in Python, teaching and making technical knowledge easier to learn. It became one of my earliest attempts to build a useful platform around a technology community.",
+    href: site.ventures.pythonmates,
+    domain: "pythonmates.com",
   },
   {
     number: "02",
@@ -20,6 +25,8 @@ const ventures = [
     phase: "Write & Publish",
     text:
       "Blogmates extended that instinct into publishing — creating a space around writing, ideas and knowledge-sharing rather than only technical learning.",
+    href: site.ventures.blog,
+    domain: "blog.saurabhjaiswal.com",
   },
   {
     number: "03",
@@ -28,6 +35,8 @@ const ventures = [
     phase: "Build an Ecosystem",
     text:
       "AIMates is the current and much larger chapter: bringing learning, building, people, opportunities and contribution together around practical AI.",
+    href: site.ventures.aimates,
+    domain: "aimates.org",
     flagship: true,
   },
 ];
@@ -90,6 +99,16 @@ export default function VenturesJourney() {
                   <h3>{venture.name}</h3>
 
                   <p>{venture.text}</p>
+
+                  <a
+                    href={venture.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ventures-journey-link"
+                  >
+                    Visit {venture.domain}
+                    <ArrowUpRight size={15} />
+                  </a>
 
                 </div>
               </article>

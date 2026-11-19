@@ -406,14 +406,20 @@
 .social-btn--linkedin { background: #0a66c2; }
 .social-btn--github { background: #24292f; border: 1px solid rgba(255, 255, 255, 0.18); }
 .social-btn--x { background: #000; border: 1px solid rgba(255, 255, 255, 0.22); }
+.social-btn {
+  gap: 8px;
+}
+
 .social-logo {
   display: block;
-  height: 20px;
-  width: auto;
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
 }
 
 .social-links--compact .social-logo {
-  height: 18px;
+  width: 15px;
+  height: 15px;
 }
 
 .sr-only {
@@ -429,23 +435,29 @@
   margin-top: 22px;
 }
 
-/* official client logos sit on a light plate so every brand reads well */
+/* official client logos: fixed box, logo scaled to fit (works for wide wordmarks
+   and square marks alike). Logos are made for dark backgrounds. */
 .client-logo {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 100%;
-  max-width: 150px;
-  height: 58px;
-  margin-bottom: 8px;
-  padding: 8px 14px;
-  border-radius: 12px;
-  background: #fff;
+  max-width: 170px;
+  height: 52px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .client-logo img {
-  max-width: 100%;
-  max-height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+/* light theme: give the (white-text) logos a dark plate so they stay visible */
+html[data-theme="executive-light"] .client-logo {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #0b1420;
 }
 
 /* keep the footer's last line clear of the floating "Ask Saurabh AI" button */

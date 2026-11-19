@@ -5,9 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { site } from "@/content/site";
 
-// Profile buttons. If an official logo file exists in public/images/social/
-// (e.g. linkedin.svg from LinkedIn's brand page), the button shows the logo;
-// otherwise it shows the name.
+// Profile buttons: brand icon from public/images/social/<id>.svg + the name.
+// If the icon file is missing, only the name shows.
 export const socialLinks = [
   { id: "linkedin", label: "LinkedIn", href: site.social.linkedin, logo: "/images/social/linkedin.svg" },
   { id: "github", label: "GitHub", href: site.social.github, logo: "/images/social/github.svg" },
@@ -34,7 +33,7 @@ function SocialLogo({ label, logo }: { label: string; logo: string }) {
     <>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img ref={ref} src={logo} alt="" className="social-logo" onError={() => setFailed(true)} />
-      <span className="sr-only">{label}</span>
+      {label}
     </>
   );
 }

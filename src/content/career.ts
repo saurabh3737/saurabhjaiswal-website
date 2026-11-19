@@ -292,7 +292,7 @@ export const languages = [
 ];
 
 // Client tiles on the home page. Each tile shows the official logo from
-// public/images/clients/<file> when that file exists, otherwise the monogram.
+// public/images/companies/<file> when that file exists, otherwise the monogram.
 // Use .png instead of .svg? Change the extension here.
 export const clients: {
   name: string;
@@ -300,18 +300,18 @@ export const clients: {
   sector: string;
   logo?: string;
 }[] = [
-  { name: "Amazon", mark: "A", sector: "Robotics & cloud", logo: "/images/clients/amazon.svg" },
-  { name: "KBC Bank", mark: "KBC", sector: "Banking", logo: "/images/clients/kbc.svg" },
-  { name: "ING Bank", mark: "ING", sector: "Banking", logo: "/images/clients/ing.svg" },
-  { name: "JPMorgan Chase", mark: "JPM", sector: "Banking", logo: "/images/clients/jpmorgan.svg" },
-  { name: "Ontoforce", mark: "O", sector: "Life sciences", logo: "/images/clients/ontoforce.svg" },
-  { name: "IMEC", mark: "imec", sector: "Semiconductor R&D", logo: "/images/clients/imec.svg" },
-  { name: "Lopos", mark: "L", sector: "Edge AI & IoT", logo: "/images/clients/lopos.svg" },
-  { name: "Rakuten", mark: "R", sector: "E-commerce & media", logo: "/images/clients/rakuten.svg" },
-  { name: "Accenture", mark: "Acc", sector: "Consulting", logo: "/images/clients/accenture.svg" },
-  { name: "Bank of America", mark: "BofA", sector: "Banking", logo: "/images/clients/bank-of-america.svg" },
-  { name: "Hewlett-Packard", mark: "HP", sector: "Technology", logo: "/images/clients/hp.svg" },
-  { name: "DRDO", mark: "DRDO", sector: "Defence research", logo: "/images/clients/drdo.svg" },
+  { name: "Amazon", mark: "A", sector: "Robotics & cloud", logo: "/images/companies/amazon.svg" },
+  { name: "KBC Bank", mark: "KBC", sector: "Banking", logo: "/images/companies/kbc.svg" },
+  { name: "ING Bank", mark: "ING", sector: "Banking", logo: "/images/companies/ing.svg" },
+  { name: "JPMorgan Chase", mark: "JPM", sector: "Banking", logo: "/images/companies/jpmorgan.svg" },
+  { name: "Ontoforce", mark: "O", sector: "Life sciences", logo: "/images/companies/ontoforce.svg" },
+  { name: "IMEC", mark: "imec", sector: "Semiconductor R&D", logo: "/images/companies/imec.svg" },
+  { name: "Lopos", mark: "L", sector: "Edge AI & IoT", logo: "/images/companies/lopos.svg" },
+  { name: "Rakuten", mark: "R", sector: "E-commerce & media", logo: "/images/companies/rakuten.svg" },
+  { name: "Accenture", mark: "Acc", sector: "Consulting", logo: "/images/companies/accenture.svg" },
+  { name: "Bank of America", mark: "BofA", sector: "Banking", logo: "/images/companies/bank-of-america.svg" },
+  { name: "Hewlett-Packard", mark: "HP", sector: "Technology", logo: "/images/companies/hp.svg" },
+  { name: "DRDO", mark: "DRDO", sector: "Defence research", logo: "/images/companies/drdo.svg" },
 ];
 
 export const clientNames = clients.map((client) => client.name);

@@ -338,9 +338,17 @@ export const beyondWork = [
   {
     title: "Sport, music & reading",
     items: [
-      "Inter-college table tennis champion (ISTE)",
-      "Playing guitar",
-      "Reading books",
+      "Inter-college table tennis champion (ISTE) — still plays",
+      "Playing guitar and listening to melodic music",
+      "Reading — favourite: You Can Win by Shiv Khera",
+    ],
+  },
+  {
+    title: "Food & languages",
+    items: [
+      "Foodie who loves trying new cuisines",
+      "Favourite dish: Shahi Paneer — and he cooks it too",
+      "Has explored around 18 languages; speaks English and Hindi, learning Dutch and French",
     ],
   },
   {
@@ -351,3 +359,21 @@ export const beyondWork = [
     ],
   },
 ];
+
+// Personal story — from the About-me page on the blog (no date of birth on purpose).
+export const personal = {
+  roots: "Born in Kanpur and raised in Bhopal, the City of Lakes.",
+  journey: [
+    { city: "Kanpur", note: "Born" },
+    { city: "Bhopal", note: "Grew up · B.E. Computer Science" },
+    { city: "Pune", note: "DRDO research · M.Tech." },
+    { city: "Ahmedabad", note: "Engineering" },
+    { city: "Bangalore", note: "HP · Rakuten · JPMorgan Chase" },
+    { city: "Hyderabad", note: "Accenture · Bank of America" },
+    { city: "Singapore", note: "Rakuten Viki" },
+    { city: "Brussels", note: "Freelance AI consulting · AIMates" },
+  ],
+  motto: "Learn, Share, and Help.",
+  identity:
+    "A community builder at heart — energised by connecting with people, learning from them and sharing ideas.",
+};

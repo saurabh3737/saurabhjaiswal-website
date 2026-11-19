@@ -8,6 +8,8 @@ export const talks = [
   {
     event: "PyCon India 2016",
     detail: "Speaker — international Python conference, New Delhi",
+    title: "Financial Modelling and Simulation with Python: using NumPy, SciPy, Matplotlib and Pandas",
+    url: "https://in.pycon.org/cfp/2016/proposals/financial-modelling-and-simulation-with-python-using-numpy-scipy-matplotlib-and-pandas~b69Qa/",
   },
 ];
 

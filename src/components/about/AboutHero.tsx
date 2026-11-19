@@ -1,8 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   BookOpenText,
 } from "lucide-react";
+
+import { site } from "@/content/site";
 
 export default function AboutHero() {
   return (
@@ -58,6 +61,19 @@ export default function AboutHero() {
           </div>
         </div>
 
+        <div className="about-hero-side">
+        <figure className="about-portrait">
+          <Image
+            src={site.images.portrait}
+            alt={`${site.name}, freelance AI consultant and AI strategy advisor`}
+            width={1000}
+            height={1600}
+            priority
+            sizes="(max-width: 900px) 90vw, 420px"
+            className="about-portrait-image"
+          />
+        </figure>
+
         <div className="about-hero-statement">
           <div className="about-statement-label">
             THE THREAD THROUGH IT ALL
@@ -79,6 +95,7 @@ export default function AboutHero() {
             Enterprise taught me to scale.
             AI brought those worlds together.
           </p>
+        </div>
         </div>
       </div>
     </section>

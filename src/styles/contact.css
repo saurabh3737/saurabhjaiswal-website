@@ -511,6 +511,20 @@ a.contact-direct-link:hover {
   color: var(--text-muted);
 }
 
+.speaking-talk-link {
+  display: block;
+  margin-top: 6px;
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.speaking-talk-link:hover {
+  text-decoration: underline;
+}
+
 .speaking-record-link {
   display: inline-flex;
   align-items: center;

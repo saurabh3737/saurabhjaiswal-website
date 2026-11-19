@@ -2,6 +2,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutBeliefs from "@/components/about/AboutBeliefs";
 import AboutNow from "@/components/about/AboutNow";
+import AboutRoots from "@/components/about/AboutRoots";
 import AboutBeyond from "@/components/about/AboutBeyond";
 import { pageMetadata } from "@/lib/seo";
 
@@ -17,6 +18,7 @@ export default function AboutPage() {
     <main>
       <AboutHero />
       <AboutStory />
+      <AboutRoots />
       <AboutBeliefs />
       <AboutBeyond />
       <AboutNow />

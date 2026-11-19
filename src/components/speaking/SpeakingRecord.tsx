@@ -41,6 +41,16 @@ export default function SpeakingRecord() {
                 <li key={talk.event}>
                   <strong>{talk.event}</strong>
                   <span>{talk.detail}</span>
+                  {talk.title && talk.url ? (
+                    <a
+                      href={talk.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="speaking-talk-link"
+                    >
+                      “{talk.title}” ↗
+                    </a>
+                  ) : null}
                 </li>
               ))}
             </ul>

@@ -58,7 +58,7 @@ export const site = {
 
   images: {
     hero: "/images/home/saurabh-hero-composition.png",
-    portrait: "/images/about/saurabh-jaiswal-suit.jpg",
+    portrait: "/images/about/saurabh-jaiswal-portrait.jpg",
     bookCover: "/images/book/ai-for-real-work-3d_old2.png",
     aimatesMug: "/images/brand/aimates-mug.png",
   },

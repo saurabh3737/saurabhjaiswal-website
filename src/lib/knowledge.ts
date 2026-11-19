@@ -8,7 +8,9 @@ import {
   education,
   engagements,
   freelance,
+  beyondWork,
   languages,
+  personal,
   roles,
 } from "@/content/career";
 import { caseStudies } from "@/content/projects";
@@ -89,6 +91,12 @@ export function buildKnowledge() {
     list(achievements),
     `Languages: ${languages.map((l) => `${l.name} (${l.level})`).join(", ")}.`,
 
+    "## Personal",
+    personal.roots,
+    `Places along the way: ${personal.journey.map((j) => `${j.city} (${j.note})`).join(" → ")}.`,
+    `Motto: "${personal.motto}" ${personal.identity}`,
+    ...beyondWork.map((g) => `- ${g.title}: ${g.items.join("; ")}`),
+
     "## Book — AI for Real Work",
     `${site.book.title}: ${site.book.subtitle}. Published ${site.book.published}, ${site.book.pages} pages, ${site.book.formats.join(" / ")}. On Amazon worldwide: ${site.book.amazonUrl}`,
     "It is a practical framework for using AI in everyday work: think with AI, decide with AI, build with AI, verify the output, and integrate AI into real workflows. For professionals, engineers, creators and curious people who want a way of working rather than another list of tools.",
@@ -101,7 +109,9 @@ export function buildKnowledge() {
     "Ventures journey: Pythonmates (Python learning, pythonmates.com) → Blogmates (writing on AI, Python and technology) → AIMates (the AI ecosystem).",
 
     "## Speaking",
-    ...talks.map((t) => `- ${t.event}: ${t.detail}`),
+    ...talks.map(
+      (t) => `- ${t.event}: ${t.detail}${t.title ? ` — talk "${t.title}" (${t.url})` : ""}`,
+    ),
     ...panels.map((p) => `- ${p.event}: ${p.detail}`),
     "Research talks:",
     list(researchTalks),

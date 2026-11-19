@@ -604,3 +604,46 @@ html[data-theme="executive-light"]
     border-bottom: 0;
   }
 }
+@media (min-width: 1181px) {
+  .hero-section,
+  .hero-grid,
+  .hero-media {
+    min-height: calc(6px + (min(100vw - 140px, 1480px) * 0.54 + 195px) / 1.5024);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hero-section,
+  .hero-grid,
+  .hero-media {
+    min-height: calc(44px + ((100vw - 140px) * 0.5 + 30px) / 1.5024);
+  }
+}
+
+@media (min-width: 1181px) {
+  .hero-section,
+  .hero-grid,
+  .hero-media {
+    min-height: min(
+      max(
+        calc(6px + (min(100vw - 140px, 1480px) * 0.54 + 195px) / 1.5024),
+        calc(100vh - 78px)
+      ),
+      860px
+    );
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hero-section,
+  .hero-grid,
+  .hero-media {
+    min-height: min(
+      max(
+        calc(44px + ((100vw - 140px) * 0.5 + 30px) / 1.5024),
+        calc(100vh - 78px)
+      ),
+      860px
+    );
+  }
+}

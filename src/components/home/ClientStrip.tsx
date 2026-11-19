@@ -8,9 +8,19 @@ export default function ClientStrip() {
       aria-label="Organisations I have worked with"
     >
       <div className="site-shell">
-        <p className="home-clients-label">
-          15+ years building with and for
-        </p>
+        <div className="clients-head">
+          <div className="section-eyebrow">Trusted by</div>
+
+          <h2 className="section-title clients-title">
+            15+ years building with{" "}
+            <span className="section-accent">global teams.</span>
+          </h2>
+
+          <p className="clients-intro">
+            Banks, big tech, research labs and consultancies — as a freelance
+            consultant and in full-time roles.
+          </p>
+        </div>
 
         <ul className="client-tiles">
           {clients.map((client) => (

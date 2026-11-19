@@ -604,21 +604,12 @@ html[data-theme="executive-light"]
     border-bottom: 0;
   }
 }
-@media (min-width: 1181px) {
-  .hero-section,
-  .hero-grid,
-  .hero-media {
-    min-height: calc(6px + (min(100vw - 140px, 1480px) * 0.54 + 195px) / 1.5024);
-  }
-}
 
-@media (min-width: 901px) and (max-width: 1180px) {
-  .hero-section,
-  .hero-grid,
-  .hero-media {
-    min-height: calc(44px + ((100vw - 140px) * 0.5 + 30px) / 1.5024);
-  }
-}
+/* =========================================
+   HERO HEIGHT
+   Fills the first screen (window height minus the 79px header),
+   is never shorter than the photo (1537 x 1023) and never taller than 860px.
+   ========================================= */
 
 @media (min-width: 1181px) {
   .hero-section,
@@ -627,7 +618,7 @@ html[data-theme="executive-light"]
     min-height: min(
       max(
         calc(6px + (min(100vw - 140px, 1480px) * 0.54 + 195px) / 1.5024),
-        calc(100vh - 78px)
+        calc(100vh - 79px)
       ),
       860px
     );
@@ -640,8 +631,8 @@ html[data-theme="executive-light"]
   .hero-media {
     min-height: min(
       max(
-        calc(44px + ((100vw - 140px) * 0.5 + 30px) / 1.5024),
-        calc(100vh - 78px)
+        calc(44px + ((100vw - 44px) * 0.479 + 30px) / 1.5024),
+        calc(100vh - 79px)
       ),
       860px
     );
